@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
+
+
+// temporary fix for scss implementing it's own min and max functions.
+// https://github.com/sass/sass/issues/2378
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...){
+  @return m#{i}n(#{$numbers});
+}
+
+$green: #5CD368;
+$blue: #45CFD7;
+$purple: #CA5FA6;
+$pink: #F36886;
+$peach: #FA8282;
+$mustard: #FFAF65;
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  font-size: min(10px,max(5px,2vw));
+}
+
+body {
+  height: 4000px;
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 0 2em;
+
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  h1 {
+    font-size: 10vh;
+    font-weight: 700;
+    color: #45CFD7;
+    margin: 0;
+  }
+}
+
+.window {
+  // border: 1px solid red;
+  overflow: hidden;
+  z-index: 100;
+  position: relative;
+  height: 33vh;
+  width: 41vh;
+
+
+  img {
+
+    position: absolute;
+    height: 120%;
+    width: auto;
+    bottom: 0;
+    transition: transform .02s linear;
+    will-change: transform;
+  }
+ 
+  .bot {
+    transform: translateY(var(--tx));
+  }
+  
+  .top {
+    transform: translateY(var(--tx));
+  } 
+}
+
+.about {
+  font-weight: 500;
+  max-width: 1000px;
+  padding: 0 10vw;
+  margin: 0 auto;
+  font-size: 3.5rem;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  a {
+    text-decoration: none;
+  }
+
+  .green {
+    color: $green;
+  }
+
+  .blue {
+    color: $blue;
+  }
+
+  .purple {
+    color: $purple;
+  }
+
+  .pink {
+    color: $pink;
+  }
+
+  .peach {
+    color: $peach;
+  }
+
+  .mustard {
+    color: $mustard;
+  }
+
+}
+
+
+.projects {
+  margin: 0 auto;
+  max-width: 1200px;
+  .project {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10em;
+    // margin: 5em auto;
+    .thumb {
+      margin-right: 2vw;
+      flex-basis: 500px;
+      min-width: 50%;
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title, .titlemob {
+      max-width: 400px;
+
+      font-size: 3.5rem;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .titlemob {
+      display:none;
+    }
+    .details {
+      max-width: 400px;
+
+      min-width: 300px;
+      flex: 1;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+} 
