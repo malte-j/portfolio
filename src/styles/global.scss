@@ -22,7 +22,7 @@ $mustard: #FFAF65;
   box-sizing: border-box;
 }
 html, body {
-  font-size: min(10px,max(5px,2vw));
+  font-size: min(10px,max(6px,calc(0.7vw + 3.5px)));
 }
 
 body {
@@ -136,23 +136,47 @@ body {
     }
 
     .title, .titlemob {
-      max-width: 400px;
+      // max-width: 400px;
 
       font-size: 3.5rem;
       color: inherit;
       text-decoration: none;
       font-weight: 500;
     }
+    
     .titlemob {
       display:none;
     }
+    
     .details {
-      max-width: 400px;
+      // max-width: 400px;
 
       min-width: 300px;
       flex: 1;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 400;
+
+      .date {
+        display: inline;
+        float: right;
+      }
     }
+  
+    .techstack {
+      margin: 0;
+      padding: 0;
+      li {
+        font-weight: 500;
+        font-size: .7em;
+        display: inline-block;
+        margin: 0 .5rem .5rem 0;
+        border: 2px solid black;
+        padding: .5rem 1rem;
+        border-radius: 3rem;
+        list-style-type: none;
+      }
+    }
+    
   }
-} 
+}
+

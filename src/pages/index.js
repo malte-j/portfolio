@@ -49,8 +49,13 @@ export default ({ data }) => {
         </div>
             <div className="details">
               <Link className="title" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
-              <p>{project.frontmatter.date}</p>
+              <p className="date">{project.frontmatter.date}</p>
               <p>{project.excerpt}</p>
+              <ul className="techstack">
+                {
+                  project.frontmatter.stack.map(tech => <li>{tech}</li>)
+                }
+              </ul>
             </div>
 
           </article>
@@ -65,10 +70,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
           id
+          excerpt(pruneLength: 140)
           frontmatter {
             title
+            date(formatString: "MMMM YY", locale: "de")
+            path
+            stack
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 200) {
@@ -76,8 +84,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            date(formatString: "MMMM YY", locale: "de")
-            path
 
           }
         }
