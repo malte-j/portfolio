@@ -32,18 +32,18 @@ export default ({ data }) => {
         mit großem Interesse an
         <a className="pink" href="/"> Webdesign</a>
         , einer Menge Erfahrung in
-        <a className="green" href="/"> Frontendentwicklung </a>
+        <a className="green" href="#Aupairadise"> Frontendentwicklung </a>
         und Spaß an 
-        <a className="mustard" href="/"> Hardwareintegration</a>
+        <a className="mustard" href="#Doorlock"> Hardwareintegration</a>
         .</p>
     </section>
 
     <section className="projects">
     {
       projects.map(({node: project}) =>
-      <article className="project" key={project.id}>
-        <Link className="titlemob" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
+      <article className="project" id={project.frontmatter.title} key={project.id}>
 
+        <Link className="titlemob" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
         <div className="thumb">
             <Img className="thumbnail" fluid={project.frontmatter.thumbnail.childImageSharp.fluid}/>
         </div>
@@ -53,7 +53,7 @@ export default ({ data }) => {
               <p>{project.excerpt}</p>
               <ul className="techstack">
                 {
-                  project.frontmatter.stack.map(tech => <li>{tech}</li>)
+                  project.frontmatter.stack.map(tech => <li key={tech} className={"tech-" + tech.toLowerCase()}>{tech}</li>)
                 }
               </ul>
             </div>
@@ -61,6 +61,10 @@ export default ({ data }) => {
           </article>
         )
     }
+    </section>
+
+    <section className="contact">    
+      <canvas id="myCanvas" width="480" height="320"></canvas>
     </section>
   </div>
 )}
