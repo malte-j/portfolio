@@ -4,4 +4,4 @@ ToDo:
   [ ] Contact form
   [ ] Navigation bar
   
-  [x] Project card responsiveness, max size on collapsed card
+  [x] Project card responsiveness, max size on collapsed card1

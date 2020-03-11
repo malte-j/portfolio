@@ -53,7 +53,7 @@ export default ({ data }) => {
               <p>{project.excerpt}</p>
               <ul className="techstack">
                 {
-                  project.frontmatter.stack.map(tech => <li key={tech} className={"tech-" + tech.toLowerCase()}>{tech}</li>)
+                  project.frontmatter.stack.map(tech => <li key={tech} className={"tech-" + tech.toLowerCase().replace(/\s/g,'')}>{tech}</li>)
                 }
               </ul>
             </div>
@@ -83,7 +83,7 @@ export const pageQuery = graphql`
             stack
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 200) {
+                fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
                 }
               }

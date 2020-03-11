@@ -5,8 +5,8 @@ date: "2019-01-10"
 thumbnail: "./thumb.png"
 stack:
   - JavaScript
-  - VueJS
-  - Firebase
+  - ReactJS
+  - Ghost CMS
   - NodeJS
   - ExpressJS
   - SQlite
