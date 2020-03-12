@@ -4,6 +4,7 @@ import "../styles/global.scss"
 import Img from "gatsby-image"
 
 import Window from "../components/window"
+import Nav from "../components/nav"
 
 // import Img from "gatsby-image"
 
@@ -15,9 +16,7 @@ export default ({ data }) => {
   <div className="app">
     <section className="header">
       <h1>
-        Hi, 
-        <br/>
-        ich bin
+        Hi, ich bin
       </h1>
 
       <Window/>
@@ -25,12 +24,16 @@ export default ({ data }) => {
       <h1>Malte</h1>
     </section>
 
-    <section className="about">
+    <Nav/>
+
+    <section className="about" id="about">
       <p>
         Student an der <a className="purple" href="/">BHT Berlin</a> mit großem Interesse an <a className="pink" href="/"> Webdesign</a>, einer Menge Erfahrung in <a className="green" href="#Aupairadise"> Frontendentwicklung</a> und Spaß an <a className="mustard" href="#Doorlock">Hardwareintegration</a>.</p>
     </section>
 
-    <section className="projects">
+    <div className="cta"><a href="#contact">Schreib mir eine Nachricht!</a></div>
+
+    <section className="projects" id="projects">
     {
       projects.map(({node: project}) =>
         <article className="project" id={project.frontmatter.title} key={project.id}>
@@ -63,7 +66,7 @@ export default ({ data }) => {
     }
     </section>
 
-    <section className="contact">    
+    <section className="contact" id="contact">    
       <canvas id="myCanvas" width="480" height="320"></canvas>
     </section>
   </div>
@@ -81,6 +84,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM YYYY", locale: "de")
             path
             stack
+            live
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 800) {

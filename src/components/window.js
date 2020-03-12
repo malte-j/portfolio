@@ -17,7 +17,7 @@ class Window extends React.Component {
       props: {
         '--tx': {
             from: '0',
-            to: '260px',
+            to: '300px',
             direct: true,
         }
       }

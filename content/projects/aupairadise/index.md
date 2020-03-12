@@ -3,6 +3,7 @@ title: Aupairadise
 path: "/projects/aupairadise"
 date: "2019-01-10"
 thumbnail: "./thumb.png"
+live: "https://aupairadise.de"
 stack:
   - JavaScript
   - ReactJS

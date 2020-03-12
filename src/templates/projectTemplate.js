@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Nav from "../components/nav"
 export default function Template({data}) {
   console.log(data)
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
     <div className="blog-post-container">
+      <Nav/>
       <div className="blog-post">
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
