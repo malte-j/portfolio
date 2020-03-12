@@ -27,39 +27,39 @@ export default ({ data }) => {
 
     <section className="about">
       <p>
-        Student an der
-        <a className="purple" href="/"> BHT Berlin </a>
-        mit großem Interesse an
-        <a className="pink" href="/"> Webdesign</a>
-        , einer Menge Erfahrung in
-        <a className="green" href="#Aupairadise"> Frontendentwicklung </a>
-        und Spaß an 
-        <a className="mustard" href="#Doorlock"> Hardwareintegration</a>
-        .</p>
+        Student an der <a className="purple" href="/">BHT Berlin</a> mit großem Interesse an <a className="pink" href="/"> Webdesign</a>, einer Menge Erfahrung in <a className="green" href="#Aupairadise"> Frontendentwicklung</a> und Spaß an <a className="mustard" href="#Doorlock">Hardwareintegration</a>.</p>
     </section>
 
     <section className="projects">
     {
       projects.map(({node: project}) =>
-      <article className="project" id={project.frontmatter.title} key={project.id}>
-
-        <Link className="titlemob" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
-        <div className="thumb">
-            <Img className="thumbnail" fluid={project.frontmatter.thumbnail.childImageSharp.fluid}/>
-        </div>
-            <div className="details">
-              <Link className="title" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
-              <p className="date">{project.frontmatter.date}</p>
-              <p>{project.excerpt}</p>
-              <ul className="techstack">
-                {
-                  project.frontmatter.stack.map(tech => <li key={tech} className={"tech-" + tech.toLowerCase().replace(/\s/g,'')}>{tech}</li>)
-                }
-              </ul>
+        <article className="project" id={project.frontmatter.title} key={project.id}>
+          <div className="project__thumbnail">
+              <Img fluid={project.frontmatter.thumbnail.childImageSharp.fluid}/>
+          </div>
+      
+          <div className="project__details">
+            <div className="project__header">
+              <Link className="project__header__title" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
+              <p className="project__header__date">{project.frontmatter.date}</p>
             </div>
+            <p className="project__about">{project.excerpt}</p>
+            <ul className="project__stack">
+              {
+                project.frontmatter.stack.map(tech => <li key={tech}>{tech}</li>)
+              }
+            </ul>
 
-          </article>
-        )
+            <ul className="project__links">
+              <li><Link to={project.frontmatter.path}>Liveansicht</Link></li>
+              <li>Github</li>
+              <li>Mehr erfahren</li>
+            </ul>
+
+          </div>
+
+        </article>
+      )
     }
     </section>
 
@@ -75,10 +75,10 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 140)
+          excerpt(pruneLength: 180)
           frontmatter {
             title
-            date(formatString: "MMMM YY", locale: "de")
+            date(formatString: "MMMM YYYY", locale: "de")
             path
             stack
             thumbnail {

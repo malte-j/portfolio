@@ -12,7 +12,8 @@ stack:
   - SQlite
 ---
 
-Das Aupairprojekt von Luise.
+Ein statischer Blog, generiert mit Gatsby und mit Ghost als Headless-CMS, gehostet auf Netlify und Vultr. Ich habe das komplette Design und die technische Umsetzung übernommen.
 
+!--
 
 Unfassbar toll!

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap');
-@import './technologies.scss';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap');
 
 // temporary fix for scss implementing it's own min and max functions.
 // https://github.com/sass/sass/issues/2378
@@ -11,25 +10,21 @@
   @return m#{i}n(#{$numbers});
 }
 
-$green: #5CD368;
-$blue: #45CFD7;
-$purple: #CA5FA6;
-$pink: #F36886;
-$peach: #FA8282;
-$mustard: #FFAF65;
+* {box-sizing: border-box;}
 
-* {
-  box-sizing: border-box;
-}
-html, body {
-  font-size: min(10px,max(7px,calc(0.7vw + 3.5px)));
+:root {
+  font-size: min(20px,max(14px,calc(0.7vw + 5px)));
+  
 }
 
 body {
+  font-size: 1rem;
   margin:0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  padding: 0 2em;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -40,7 +35,7 @@ body {
   justify-content: center;
   
   h1 {
-    font-size: 10vh;
+    font-size: 6vh;
     font-weight: 700;
     color: #45CFD7;
     margin: 0;
@@ -55,9 +50,7 @@ body {
   height: 33vh;
   width: 41vh;
 
-
   img {
-
     position: absolute;
     height: 120%;
     width: auto;
@@ -76,126 +69,114 @@ body {
 }
 
 .about {
-  font-weight: 500;
-  max-width: 1000px;
-  padding: 0 10vw;
   margin: 0 auto;
-  font-size: 3.5rem;
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  
+  max-width: 800px;
   a {
+    color: inherit;
     text-decoration: none;
+    border-bottom: 1px solid black;
   }
-
-  .green {
-    color: $green;
-  }
-
-  .blue {
-    color: $blue;
-  }
-
-  .purple {
-    color: $purple;
-  }
-
-  .pink {
-    color: $pink;
-  }
-
-  .peach {
-    color: $peach;
-  }
-
-  .mustard {
-    color: $mustard;
-  }
-
 }
 
-
 .projects {
-  margin: 8rem auto;
-  max-width: 1040px;
+  max-width: 1125px;
+  padding: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+
+  // REMOVE
+  // font-size: 18px;
+
   .project {
     display: flex;
-    margin-bottom: 10em;
+    // flex-wrap: wrap;
 
-    .thumb {
-      margin-right: 4rem;
+    // margin: 0 -34px;
+    margin-bottom: 100px;
+
+    &__thumbnail {
+      
+      margin-right: 3vw;
       flex: 1;
     }
 
-    .title, .titlemob {
-      font-size: 3.6rem;
-      color: inherit;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .titlemob {
-      display:none;
-    }
-    
-    .details {
+    &__details {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       flex: 1;
-      font-size: 1.8rem;
-      font-weight: 400;
+    }
 
-      .date {
-        display: inline;
-        float: right;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &__date {
+        margin: 0;
+      }
+
+      &__title {
+        // REMOVE
+        // font-size: 22px;
+        font-size: 1.2rem;
+        color: inherit;
+        text-decoration: none;
       }
     }
-  
-    .techstack {
+    
+
+    &__about {
+      margin: 0;
+    }
+
+    &__stack {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline;
+        font-style: italic;
+        &::after {
+          content: ", ";
+        }
+      }
+    }
+
+    &__links {
+      display: flex;
+      // flex-wrap: wrap;
+      justify-content: space-between;
       margin: 0;
       padding: 0;
       li {
-        font-weight: 500;
-        font-size: .7em;
-        display: inline-block;
-        margin: 0 .5rem .5rem 0;
-        border: .2rem solid;
-        padding: .8rem 1rem;
-        border-radius: 3rem;
+        a {
+          color: inherit;
+          text-decoration: none;
+          border-bottom: 1px solid black;
+        }
         list-style-type: none;
+        word-wrap: none;
       }
     }
-    
   }
 }
 
-.datemob {
-  display: inline;
-  float: right;
-}
-
-
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 600px) {
   .projects {
-    max-width: 580px;
-    margin: 8rem auto;
     .project {
       flex-direction: column;
       
-      .titlemob {
-        display: inline;
+      &__thumbnail {
+        margin: 0;
       }
-
-      .title {
-        display: none;
-      }
-      
-      .thumb {
-        margin: 1rem 0;
-      }
-      
-      .details .date {
-        display: none;
+  
+      &__details {
+        margin: 0;
+        >* {
+          margin-top: 2rem;
+        }
       }
     }
   }

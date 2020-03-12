@@ -20,7 +20,12 @@ module.exports = {
         path: './content/projects',
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      "resolve": `gatsby-transformer-remark`,
+      "options": {
+        "excerpt_separator": `!--`
+      }
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
