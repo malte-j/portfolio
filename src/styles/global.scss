@@ -31,11 +31,8 @@ a {
   text-decoration: none;
   border-bottom: 1px solid black;
 
-
   &:hover {
-    // font-weight: bold;
-    border-color: blue;
-    // border-width: 2px;
+    font-weight: bold;
   }
 }
 
@@ -117,18 +114,11 @@ a {
   margin: 0 auto;
   overflow: hidden;
 
-  // REMOVE
-  // font-size: 18px;
-
   .project {
     display: flex;
-    // flex-wrap: wrap;
-
-    // margin: 0 -34px;
     margin-bottom: 100px;
 
     &__thumbnail {
-      
       margin-right: 3vw;
       flex: 1;
     }
@@ -151,15 +141,12 @@ a {
       }
 
       &__title {
-        // REMOVE
-        // font-size: 22px;
         font-size: 1.2rem;
         color: inherit;
         text-decoration: none;
       }
     }
     
-
     &__about {
       margin: 0;
     }
@@ -168,9 +155,11 @@ a {
       list-style: none;
       padding: 0;
       margin: 0;
+
       li {
         display: inline;
         font-style: italic;
+
         &::after {
           content: ", ";
         }
@@ -179,18 +168,13 @@ a {
 
     &__links {
       display: flex;
-      // flex-wrap: wrap;
       justify-content: space-between;
       margin: 0;
       padding: 0;
+
       li {
-        a {
-          color: inherit;
-          text-decoration: none;
-          border-bottom: 1px solid black;
-        }
         list-style-type: none;
-        word-wrap: none;
+        word-wrap: none;        
       }
     }
   }
@@ -222,6 +206,7 @@ nav {
   top: 0;
   width: 100%;
   background: #fff;
+  
   ul {
     height: 100%;
     margin: 0;
@@ -231,8 +216,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
+    
     li {
-     
       list-style-type: none;
     }
   }
