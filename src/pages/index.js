@@ -2,10 +2,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import "../styles/global.scss"
 import Img from "gatsby-image"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-import Window from "../components/window"
+import Window from "../components/window2"
 import Nav from "../components/nav"
-
+import Contact from "../components/contactForm"
 // import Img from "gatsby-image"
 
 export default ({ data }) => {
@@ -15,23 +16,23 @@ export default ({ data }) => {
   return(
   <div className="app">
     <section className="header">
-      <h1>
-        Hi, ich bin
-      </h1>
+      <div className="info">
+        <p>Hi, ich bin Malte</p>
+        <p>Webentwickler und Student</p>
+        <AnchorLink to="/#contact" title="Kontaktier mich!" />
+      </div>
+
+    <div className="spacer"></div>
 
       <Window/>
-
-      <h1>Malte</h1>
     </section>
 
     <Nav/>
 
-    <section className="about" id="about">
+    {/* <section className="about" id="about">
       <p>
         Student an der <a className="purple" href="/">BHT Berlin</a> mit großem Interesse an <a className="pink" href="/"> Webdesign</a>, einer Menge Erfahrung in <a className="green" href="#Aupairadise"> Frontendentwicklung</a> und Spaß an <a className="mustard" href="#Doorlock">Hardwareintegration</a>.</p>
-    </section>
-
-    <div className="cta"><a href="#contact">Schreib mir eine Nachricht!</a></div>
+    </section> */}
 
     <section className="projects" id="projects">
     {
@@ -54,21 +55,35 @@ export default ({ data }) => {
             </ul>
 
             <ul className="project__links">
-              <li><Link to={project.frontmatter.path}>Liveansicht</Link></li>
-              <li>Github</li>
-              <li>Mehr erfahren</li>
+              {Object.entries(project.frontmatter.links).map(link => {
+                let linkText
+                if(link[1] !== null) {
+                  switch (link[0]) {
+                    case 'github':
+                      linkText = "GitHub"
+                      break;
+                    case 'live':
+                      linkText = "Liveansicht"
+                      break;
+                    case 'more':
+                      linkText = "Mehr erfahren"
+                      break;
+                    default:
+                      linkText = link[0]
+                      break;
+                  }  
+                  return (<li key={link[0]}><a href={link[1]}>{linkText}</a></li>)
+                }
+                return null
+              })}
             </ul>
-
           </div>
-
         </article>
       )
     }
     </section>
 
-    <section className="contact" id="contact">    
-      <canvas id="myCanvas" width="480" height="320"></canvas>
-    </section>
+    <Contact />
   </div>
 )}
 
@@ -84,7 +99,11 @@ export const pageQuery = graphql`
             date(formatString: "MMMM YYYY", locale: "de")
             path
             stack
-            live
+            links {
+              github
+              live
+              more
+            } 
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 800) {

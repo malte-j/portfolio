@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Nav from "../components/nav"
+
 export default function Template({data}) {
   // console.log(data)
   const { markdownRemark } = data // data.markdownRemark holds your post data

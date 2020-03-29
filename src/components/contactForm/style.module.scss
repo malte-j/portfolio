@@ -1,0 +1,64 @@
+.contact {
+  height: 100vh;
+  max-width: 800px;
+  font-size: 1rem;
+  margin: 0 auto;
+  color: #10f0f0;
+
+  .input-wrapper {
+    position: relative;
+    margin-top: 2.5rem;
+  }
+
+  input, textarea {
+    border: 1px solid #0f0f0f;
+    font-size: 1rem;
+    width: 100%;
+    padding: .8rem;
+    font-family: inherit;
+  }
+
+  label {
+    font-size: 0.8rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    user-select: none;
+    pointer-events: none;
+    color: #3a3a3a;
+    transition: transform .2s ease;
+  }
+  // .filled {
+  //   color: white;
+  //   background: black;
+
+  // }
+
+  input:focus + label, textarea:focus + label, .filled + label {
+    transform: translate(-1rem, -2.5rem);
+    color: #0f0f0f;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    border: 1px solid black;
+    background: none;
+    padding: .8rem;
+    font-family: inherit;
+
+    &:hover, &:focus {
+      color: white;
+      background-color: black;
+      border-color: black;
+    }
+
+    &:active {
+      color: white;
+      background-color: #0702F8;
+      border-color: #0702F8;
+    }
+  }
+}

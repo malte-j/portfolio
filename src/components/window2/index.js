@@ -1,13 +1,16 @@
 import React from "react";
 import * as basicScroll from 'basicscroll'
+import style from "./index.module.scss"
+
 // import { useStaticQuery,graphql } from "gatsby"
 // import Img from "gatsby-image"
 
-import topImg from "../../static/top.png"
-import bottomImg from "../../static/bottom.png"
+import topImg from "../../../static/top.png"
+import bottomImg from "../../../static/bottom.png"
 
 class Window extends React.Component {
   componentDidMount() {
+    
     basicScroll.create({
       elem: document.querySelector('.bot'),
       direct: true,
@@ -39,7 +42,7 @@ class Window extends React.Component {
 
   render() {
     return (
-      <div className="window">
+      <div className={`window ${style.window}`}>
           <img src={ bottomImg } alt="" className="bot"/>
           <img src={ topImg } alt="" className="top"/>
       </div>

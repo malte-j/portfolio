@@ -3,6 +3,10 @@ title: Doorlock
 path: "/projects/doorlock"
 date: "2017-01-04"
 thumbnail: "./thumb.png"
+links: 
+  github: "https://github.com"
+  live: "https://example.com" 
+  more: "https://example.com" 
 stack:
   - JavaScript
   - VueJS

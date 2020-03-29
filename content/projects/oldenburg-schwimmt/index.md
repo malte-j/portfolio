@@ -1,11 +1,10 @@
 ---
-title: Aupairadise
-path: "/projects/aupairadise"
-date: "2019-01-10"
+title: Oldenburg Schwimmt
+path: "/projects/oldenburg-schwimmt"
+date: "2016-04-22"
 thumbnail: "./thumb.png"
 links: 
   github: "https://github.com"
-  live: "https://example.com" 
   more: "https://example.com" 
 stack:
   - JavaScript
