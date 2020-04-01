@@ -7,15 +7,16 @@ links:
   github: "https://github.com"
   more: "https://example.com" 
 stack:
+  - PHP
+  - MySQL
+  - Pug
+  - Gulp
+  - SCSS
   - JavaScript
-  - ReactJS
-  - Ghost CMS
-  - NodeJS
-  - ExpressJS
-  - SQlite
+  - NGINX
 ---
 
-Ein statischer Blog, generiert mit Gatsby und mit Ghost als Headless-CMS, gehostet auf Netlify und Vultr. Ich habe das komplette Design und die technische Umsetzung übernommen.
+Eine Webseite für meinen Schwimmverein, um Anmeldungen für ein Schwimmevent zu sammeln. Das Frontend wird generiert PHP mit Gulp und speichert die Anmeldedaten dann in MySQL.
 
 !--
 

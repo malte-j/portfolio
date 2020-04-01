@@ -38,7 +38,10 @@ class ContactForm extends React.Component {
     this.name = React.createRef();
     this.email = React.createRef();
     this.message = React.createRef();
+    this.showLength = React.createRef();
+    this.change = this.change.bind(this);
 
+    // console.log(this.length)
   }
 
   handleSubmit(event) {
@@ -54,6 +57,12 @@ class ContactForm extends React.Component {
       e.target.className = style.filled
     } else {
       e.target.className = ""
+    }
+    if(e.target.type === "textarea") {
+      // console.log(e.target.value.length)
+      this.showLength.current.innerHTML = e.target.value.length + '/1000'
+      // this.length.setAttribute("data-content", e.target.value);
+      // e.target.className += " " + style.red;
     }
   }
 
@@ -72,6 +81,7 @@ class ContactForm extends React.Component {
           <div className={style.inputWrapper}>
             <textarea name="message" rows="6" onChange={this.change} ref={this.message} required></textarea>
             <label htmlFor="message">Nachricht</label>
+            <p className={style.showlength} ref={this.showLength}></p>
           </div>
           <p>
             <button type="submit" ref={this.input}>Abschicken</button>

@@ -1,9 +1,10 @@
 .contact {
-  height: 100vh;
+  height: 70vh;
   max-width: 800px;
   font-size: 1rem;
   margin: 0 auto;
-  color: #10f0f0;
+  margin-top: 15vh;
+  padding: 1rem;
 
   .input-wrapper {
     position: relative;
@@ -61,4 +62,15 @@
       border-color: #0702F8;
     }
   }
+}
+
+.red {
+  border:2px solid red!important;
+}
+.showlength {
+  color: #3a3a3a;
+  bottom: 1rem;
+  margin: 0;
+  right: 1rem;
+  position: absolute;
 }

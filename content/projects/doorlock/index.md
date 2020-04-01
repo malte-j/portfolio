@@ -2,7 +2,7 @@
 title: Doorlock
 path: "/projects/doorlock"
 date: "2017-01-04"
-thumbnail: "./thumb.png"
+thumbnail: "./thumb.jpg"
 links: 
   github: "https://github.com"
   live: "https://example.com" 
@@ -13,7 +13,11 @@ stack:
   - Firebase
   - NodeJS
   - ExpressJS
+  - Websockets
+  - SocketIO
   - SQlite
+  - RaspberryPi
+  - Figma
 ---
 
 Ein cooles Projekt, das eindeutig echt toll ist, oh ja! Sogar so toll, dass es bis jetzt in der Schule genutzt wird.

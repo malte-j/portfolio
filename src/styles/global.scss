@@ -13,7 +13,7 @@
 * {box-sizing: border-box;}
 
 :root {
-  font-size: min(20px,max(14px,calc(0.7vw + 5px)));
+  font-size: min(18px,max(14px,calc(0.55vw + 5px)));
 }
 
 body {
@@ -38,6 +38,21 @@ a {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
 .header {
   height: 100vh;
   display: flex;
@@ -51,7 +66,9 @@ a {
 
   .info {
     text-align: center;
-    p,a {
+    font-size: 1.2rem;
+
+    >* {
       margin: 3rem 0;
     }
   }
@@ -145,7 +162,7 @@ a {
         display: inline;
         font-style: italic;
 
-        &::after {
+        &:not(:last-child)::after {
           content: ", ";
         }
       }

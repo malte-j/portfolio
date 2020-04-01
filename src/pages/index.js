@@ -15,24 +15,21 @@ export default ({ data }) => {
   
   return(
   <div className="app">
-    <section className="header">
+    <section className="header" id="about">
       <div className="info">
-        <p>Hi, ich bin Malte</p>
-        <p>Webentwickler und Student</p>
+        <h1>Hi, ich bin Malte.</h1>
+        <h1>Webentwickler und Student.</h1>
         <AnchorLink to="/#contact" title="Kontaktier mich!" />
       </div>
 
-    <div className="spacer"></div>
+      <div className="spacer"></div>
 
       <Window/>
     </section>
 
     <Nav/>
 
-    {/* <section className="about" id="about">
-      <p>
-        Student an der <a className="purple" href="/">BHT Berlin</a> mit großem Interesse an <a className="pink" href="/"> Webdesign</a>, einer Menge Erfahrung in <a className="green" href="#Aupairadise"> Frontendentwicklung</a> und Spaß an <a className="mustard" href="#Doorlock">Hardwareintegration</a>.</p>
-    </section> */}
+    <h2>Ausgewählte Projekte</h2>
 
     <section className="projects" id="projects">
     {
