@@ -2,7 +2,7 @@
 title: Aupairadise
 path: "/projects/aupairadise"
 date: "2019-01-10"
-thumbnail: "./thumb.png"
+thumbnail: "./Aupairadise.jpg"
 links: 
   github: "https://github.com/SkyGuardian42/Aupairadise"
   live: "https://aupairadise.de/" 

@@ -2,7 +2,7 @@
 title: Doorlock
 path: "/projects/doorlock"
 date: "2017-01-04"
-thumbnail: "./thumb.jpg"
+thumbnail: "./Doorlock.jpg"
 links: 
   github: "https://github.com"
   live: "https://example.com" 
@@ -20,8 +20,9 @@ stack:
   - Figma
 ---
 
-Ein cooles Projekt, das eindeutig echt toll ist, oh ja! Sogar so toll, dass es bis jetzt in der Schule genutzt wird.
+Eine SPA und dazugehörige Node-Anwendung auf einem RaspberryPi zur Steuerung des Türschlosses in unserem Computerraum, komplett mit Nutzerverwaltung und Eventlog. 
 
+!--
 
 
 

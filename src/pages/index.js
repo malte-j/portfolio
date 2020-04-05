@@ -29,7 +29,7 @@ export default ({ data }) => {
 
     <Nav/>
 
-    <h2>Ausgewählte Projekte</h2>
+    <h2>Ausgewählte Projekte:</h2>
 
     <section className="projects" id="projects">
     {
@@ -80,6 +80,8 @@ export default ({ data }) => {
     }
     </section>
 
+    <h2>Kontakt:</h2>
+
     <Contact />
   </div>
 )}
@@ -103,7 +105,7 @@ export const pageQuery = graphql`
             } 
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }

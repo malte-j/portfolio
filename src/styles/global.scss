@@ -121,6 +121,7 @@ h2 {
     margin-bottom: 100px;
 
     &__thumbnail {
+      overflow: hidden;
       margin-right: 3vw;
       flex: 1;
     }
@@ -203,10 +204,11 @@ h2 {
   .header {
     flex-direction: column-reverse;
     overflow: hidden;
-    // justify-content: space-evenly;
+
     .info p, .info a {
       margin: 2rem 0;
     }
+    
     .spacer {
       width: 0;
       height: 6vw;

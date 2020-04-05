@@ -2,7 +2,7 @@
 title: Oldenburg Schwimmt
 path: "/projects/oldenburg-schwimmt"
 date: "2016-04-22"
-thumbnail: "./thumb.png"
+thumbnail: "./OldenburgSchwimmt.jpg"
 links: 
   github: "https://github.com"
   more: "https://example.com" 
@@ -16,7 +16,7 @@ stack:
   - NGINX
 ---
 
-Eine Webseite für meinen Schwimmverein, um Anmeldungen für ein Schwimmevent zu sammeln. Das Frontend wird generiert PHP mit Gulp und speichert die Anmeldedaten dann in MySQL.
+Eine Webseite für meinen Schwimmverein, um Anmeldungen für ein Schwimmevent zu sammeln. Das Frontend generiert PHP mit Gulp, welches die Anmeldedaten dann in MySQL speichert.
 
 !--
 
