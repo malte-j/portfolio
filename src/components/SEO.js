@@ -8,7 +8,6 @@ export default () => {
   const { siteMetadata:meta } = site
   return(
   <Helmet>
-    {console.log(meta)}
     <title>{meta.title}</title>
     <meta property="og:title" content={meta.title} />
     <meta property="og:url" content="https://malts.me" />

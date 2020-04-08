@@ -1,10 +1,7 @@
 import React from "react";
 import * as basicScroll from 'basicscroll'
-// import { useStaticQuery,graphql } from "gatsby"
-// import Img from "gatsby-image"
-
-import topImg from "../../static/top.png"
-import bottomImg from "../../static/bottom.png"
+import { StaticQuery,graphql } from "gatsby"
+import Img from "gatsby-image"
 
 class Window extends React.Component {
   componentDidMount() {
@@ -37,25 +34,42 @@ class Window extends React.Component {
     }).start()
   }
 
+  
+
+
   render() {
     return (
       <div className="window">
-          <img src={ bottomImg } alt="" className="bot"/>
-          <img src={ topImg } alt="" className="top"/>
+          <Img className="bot"  placeholderStyle={{ 'color': 'blue' }} loading="eager" fluid={this.props.images.bottom.childImageSharp.fluid}/>
+          <Img className="top" placeholderStyle={{ 'color': 'blue' }} loading="eager" fluid={this.props.images.top.childImageSharp.fluid}/>
       </div>
 
     );
   }
 }
 
-// const data = useStaticQuery(graphql`
-//   query HeaderQuery {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `)
 
-export default Window
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query MyQuery {
+        bottom: file(relativePath: {eq: "bottom.png"}) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        top: file(relativePath: {eq: "top.png"}) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }`
+    }
+
+    render={images=>(<Window images={images}/>)}
+  />
+)

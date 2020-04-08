@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import "../styles/global.scss"
 import Img from "gatsby-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
@@ -9,7 +8,6 @@ import Nav from "../components/nav"
 import Contact from "../components/contactForm"
 import SEO from "../components/SEO"
 import Footer from "../components/footer"
-// import Img from "gatsby-image"
 
 export default ({ data }) => {
   
