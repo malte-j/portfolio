@@ -5,6 +5,12 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "Malte Janßen",
+    description: "Website und Portfolio von Malte Janßen, Webentwickler und Student.",
+    url: "https://malts.me",
+    image: "/images/sharing.png",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -35,5 +41,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Malte`,
+        short_name: `Malte`,
+        orientation: `portrait`,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        lang:`de-DE`,
+        display: `standalone`,
+        icon: `static/favicon.png`,
+        cache_busting_mode: 'none',
+      },
+    },
   ],
 }

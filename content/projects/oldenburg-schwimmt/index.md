@@ -1,11 +1,9 @@
 ---
 title: Oldenburg Schwimmt
 path: "/projects/oldenburg-schwimmt"
-date: "2016-04-22"
+date: "2017-06-01"
 thumbnail: "./OldenburgSchwimmt.jpg"
-links: 
-  github: "https://github.com"
-  more: "https://example.com" 
+links: "[['GitHub', 'https://github.com/SkyGuardian42/OldenburgSchwimmt']]"
 stack:
   - PHP
   - MySQL

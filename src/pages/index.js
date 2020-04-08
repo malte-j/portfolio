@@ -1,12 +1,14 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import "../styles/global.scss"
 import Img from "gatsby-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-import Window from "../components/window2"
+import Window from "../components/window"
 import Nav from "../components/nav"
 import Contact from "../components/contactForm"
+import SEO from "../components/SEO"
+import Footer from "../components/footer"
 // import Img from "gatsby-image"
 
 export default ({ data }) => {
@@ -15,6 +17,7 @@ export default ({ data }) => {
   
   return(
   <div className="app">
+    <SEO/>
     <section className="header" id="about">
       <div className="info">
         <h1>Hi, ich bin Malte.</h1>
@@ -41,7 +44,8 @@ export default ({ data }) => {
       
           <div className="project__details">
             <div className="project__header">
-              <Link className="project__header__title" to={project.frontmatter.path}>{project.frontmatter.title}</Link>
+              <h3 className="project__header__title">{project.frontmatter.title}</h3>
+              {/* <Link className="project__header__title" to={project.frontmatter.path}>{project.frontmatter.title}</Link> */}
               <p className="project__header__date">{project.frontmatter.date}</p>
             </div>
             <p className="project__about">{project.excerpt}</p>
@@ -52,27 +56,11 @@ export default ({ data }) => {
             </ul>
 
             <ul className="project__links">
-              {Object.entries(project.frontmatter.links).map(link => {
-                let linkText
-                if(link[1] !== null) {
-                  switch (link[0]) {
-                    case 'github':
-                      linkText = "GitHub"
-                      break;
-                    case 'live':
-                      linkText = "Liveansicht"
-                      break;
-                    case 'more':
-                      linkText = "Mehr erfahren"
-                      break;
-                    default:
-                      linkText = link[0]
-                      break;
-                  }  
-                  return (<li key={link[0]}><a href={link[1]}>{linkText}</a></li>)
-                }
-                return null
-              })}
+              {(function generateLinks() {
+                const rawLinks = project.frontmatter.links 
+                const links = JSON.parse(rawLinks.replace(/'/g, `"`))
+                return links.map((link, id)=>(<li key={id}><a target="_blank" rel="noopener noreferrer" href={link[1]}>{link[0]}</a></li>))
+              })()}
             </ul>
           </div>
         </article>
@@ -80,9 +68,11 @@ export default ({ data }) => {
     }
     </section>
 
-    <h2>Kontakt:</h2>
+    <h2 className="contact">Kontakt:</h2>
 
     <Contact />
+
+    <Footer/>
   </div>
 )}
 
@@ -98,11 +88,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM YYYY", locale: "de")
             path
             stack
-            links {
-              github
-              live
-              more
-            } 
+            links
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 600) {

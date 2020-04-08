@@ -53,6 +53,18 @@ h2 {
   margin-bottom: 10vh;
 }
 
+h3 { 
+  font-size: inherit;
+  margin: 0;
+  border-bottom: 1px solid black
+  // text-decoration: underline;
+}
+
+h2.contact {
+  margin-top: 18vh;
+  margin-bottom: 10vh;
+}
+
 .header {
   height: 100vh;
   display: flex;
@@ -118,7 +130,9 @@ h2 {
 
   .project {
     display: flex;
-    margin-bottom: 100px;
+    &:not(:last-child) {
+      margin-bottom: 100px;
+    }
 
     &__thumbnail {
       overflow: hidden;
@@ -230,6 +244,7 @@ nav {
     padding:0;
     max-width: 700px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;

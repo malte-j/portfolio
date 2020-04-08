@@ -1,12 +1,9 @@
 ---
 title: Aupairadise
 path: "/projects/aupairadise"
-date: "2019-01-10"
+date: "2019-07-10"
 thumbnail: "./Aupairadise.jpg"
-links: 
-  github: "https://github.com/SkyGuardian42/Aupairadise"
-  live: "https://aupairadise.de/" 
-  more: "https://example.com" 
+links: "[['Zur Website', 'https://aupairadise.de'], ['GitHub', 'https://github.com/SkyGuardian42/Aupairadise']]"
 stack:
   - JavaScript
   - React

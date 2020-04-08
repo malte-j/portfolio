@@ -1,12 +1,9 @@
 ---
 title: Doorlock
 path: "/projects/doorlock"
-date: "2017-01-04"
+date: "2018-02-04"
 thumbnail: "./Doorlock.jpg"
-links: 
-  github: "https://github.com"
-  live: "https://example.com" 
-  more: "https://example.com" 
+links: "[['Backend-Code', 'https://github.com/SkyGuardian42/doorlock-server'], ['Frontend-Code', 'https://glitch.com/~doorlock'], ['Mehr Erfahren', 'https://medium.com/@malts/die-technik-hinter-dem-t%C3%BCrschloss-4f44cf945c7e']]"
 stack:
   - JavaScript
   - VueJS

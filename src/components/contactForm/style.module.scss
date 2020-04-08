@@ -1,14 +1,15 @@
 .contact {
-  height: 70vh;
   max-width: 800px;
   font-size: 1rem;
   margin: 0 auto;
-  margin-top: 15vh;
   padding: 1rem;
+  margin-bottom: 15vh;
 
   .input-wrapper {
     position: relative;
-    margin-top: 2.5rem;
+    &:not(:last-child) {
+      margin: 1rem 0 2.5rem 0;
+    }
   }
 
   input, textarea {
@@ -69,4 +70,7 @@
   margin: 0;
   right: 1rem;
   position: absolute;
+}
+.bot {
+  display: none;
 }

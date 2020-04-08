@@ -1,14 +1,17 @@
 **ToDo:**
 ```
-  [ ] Headlines for Sections
   [ ] Contact form
     [ ] Other Accounts / Impressum
     [ ] Submitting
     [x] Styling
-  [ ] Footer
-  [ ] View/Load more Projects
-  [ ] Blog
-
+  [ ] SEO
+    [x] Favicon
+    [x] Manifest File
+    [ ] Social Previews
+  [ ] Service worker, offline support
+  
+  [x] Footer
+  [x] Headlines for Sections
   [x] Actual Content
     [x] Thumbnails
     [x] Description
@@ -20,3 +23,8 @@
   [x] Project card responsiveness, max size on collapsed card
   
   ```
+**Backlog**
+```
+  [ ] View/Load more Projects
+  [ ] Blog
+```
