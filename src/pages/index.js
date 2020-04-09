@@ -89,7 +89,7 @@ export const pageQuery = graphql`
             links
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 600, , quality: 70) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
