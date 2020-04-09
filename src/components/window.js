@@ -55,14 +55,14 @@ export default () => (
       query MyQuery {
         bottom: file(relativePath: {eq: "bottom.png"}) {
           childImageSharp {
-            fluid(maxWidth: 600) {
+            fluid(maxWidth: 470) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         top: file(relativePath: {eq: "top.png"}) {
           childImageSharp {
-            fluid(maxWidth: 600, quality: 80) {
+            fluid(maxWidth: 470, quality: 80) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

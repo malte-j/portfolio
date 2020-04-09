@@ -7,7 +7,7 @@ export default () => {
   const { site } = useStaticQuery(query)
   const { siteMetadata:meta } = site
   return(
-  <Helmet>
+  <Helmet htmlAttributes={{"lang": "de"}}>
     <title>{meta.title}</title>
     <meta property="og:title" content={meta.title} />
     <meta property="og:url" content="https://malts.me" />

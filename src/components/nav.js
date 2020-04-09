@@ -5,9 +5,9 @@ export default ()=>{
   return (
     <nav>
       <ul>
-        <AnchorLink to="/#about" title="Über mich" />
-        <AnchorLink to="/#projects" title="Projekte" />
-        <AnchorLink to="/#contact" title="Kontakt" />
+        <li><AnchorLink to="/#about" title="Über mich" /></li>
+        <li><AnchorLink to="/#projects" title="Projekte" /></li>
+        <li><AnchorLink to="/#contact" title="Kontakt" /></li>
       </ul>
     </nav>
   )
