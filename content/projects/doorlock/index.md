@@ -17,7 +17,7 @@ stack:
   - Figma
 ---
 
-Eine SPA und dazugehörige Node-Anwendung auf einem RaspberryPi zur Steuerung des Türschlosses in unserem Computerraum, komplett mit Nutzerverwaltung und Eventlog. 
+Eine SPA und dazugehörige Node-Anwendung auf einem RaspberryPi zur Steuerung des Türschlosses im Computerraum des Herbartgymnasiums, komplett mit Nutzerverwaltung und Eventlog. 
 
 !--
 

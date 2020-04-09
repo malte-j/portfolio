@@ -15,7 +15,7 @@ stack:
   - Cloudflare
 ---
 
-Ein statisch generierter Blog, generiert mit Gatsby und mit Ghost als Headless-CMS, gehostet auf Netlify und Vultr. Ich habe das komplette Design und die technische Umsetzung übernommen.
+Ein statisch generierter Blog für Luise Fuhrhopp, generiert mit Gatsby und mit Ghost als Headless-CMS, gehostet auf Netlify und Vultr. Ich habe das komplette Design und die technische Umsetzung übernommen.
 
 !--
 
