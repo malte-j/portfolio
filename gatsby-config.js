@@ -9,7 +9,7 @@ module.exports = {
     title: "Malte Janßen",
     description: "Website und Portfolio von Malte Janßen, Webentwickler und Student.",
     url: "https://malts.me",
-    image: "/images/sharing.png",
+    image: "images/sharing.png",
   },
   plugins: [
     {
