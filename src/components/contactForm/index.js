@@ -30,6 +30,7 @@ class ContactForm extends React.Component {
     return (
       <section className={style.contact} id="contact">
         <form name="contact" onSubmit={this.handleSubmit} method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
           <div className={style.inputWrapper}>
             <input type="text" name="name"  onChange={this.change} ref={this.name} required/>
             <label htmlFor="name">Name</label>
