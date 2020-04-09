@@ -13,9 +13,9 @@ class ContactForm extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('A name was submitted: ' + this.name.current.value);
-    console.log('A email was submitted: ' + this.email.current.value);
-    console.log('A message was submitted: ' + this.message.current.value);
+    // console.log('A name was submitted: ' + this.name.current.value);
+    // console.log('A email was submitted: ' + this.email.current.value);
+    // console.log('A message was submitted: ' + this.message.current.value);
   }
 
   change(e) {

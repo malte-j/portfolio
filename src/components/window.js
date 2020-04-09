@@ -40,8 +40,8 @@ class Window extends React.Component {
   render() {
     return (
       <div className="window">
-          <Img className="bot"  placeholderStyle={{ 'color': 'blue' }} loading="eager" fluid={this.props.images.bottom.childImageSharp.fluid}/>
-          <Img className="top" placeholderStyle={{ 'color': 'blue' }} loading="eager" fluid={this.props.images.top.childImageSharp.fluid}/>
+          <Img className="bot" loading="eager" fluid={this.props.images.bottom.childImageSharp.fluid}/>
+          <Img className="top" loading="eager" fluid={this.props.images.top.childImageSharp.fluid}/>
       </div>
 
     );
@@ -55,14 +55,14 @@ export default () => (
       query MyQuery {
         bottom: file(relativePath: {eq: "bottom.png"}) {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         top: file(relativePath: {eq: "top.png"}) {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 600, quality: 80) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

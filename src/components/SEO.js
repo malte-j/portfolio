@@ -21,6 +21,7 @@ export default () => {
     <meta property="og:locale" content="de_DE" />
 
     <meta property="og:image" content={meta.image} />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet"/>
 
 
   </Helmet>

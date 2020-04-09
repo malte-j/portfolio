@@ -37,7 +37,7 @@ export default ({ data }) => {
       projects.map(({node: project}) =>
         <article className="project" id={project.frontmatter.title} key={project.id}>
           <div className="project__thumbnail">
-              <Img fluid={project.frontmatter.thumbnail.childImageSharp.fluid}/>
+              <Img loading="lazy" fluid={project.frontmatter.thumbnail.childImageSharp.fluid}/>
           </div>
       
           <div className="project__details">
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
