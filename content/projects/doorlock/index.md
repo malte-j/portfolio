@@ -15,6 +15,7 @@ stack:
   - SQlite
   - RaspberryPi
   - Figma
+featured: true
 ---
 
 Eine SPA und dazugehörige Node-Anwendung auf einem RaspberryPi zur Steuerung des Türschlosses im Computerraum des Herbartgymnasiums, komplett mit Nutzerverwaltung und Eventlog. 
