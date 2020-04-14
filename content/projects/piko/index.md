@@ -1,21 +1,20 @@
 ---
 title: Piko
 path: "/projects/piko"
-date: "2019-06-01"
-thumbnail: "./OldenburgSchwimmt.jpg"
-links: "[['GitHub', 'https://github.com/SkyGuardian42/OldenburgSchwimmt']]"
+date: "2019-09-01"
+thumbnail: "./Piko.jpg"
+links: "[['Zur Website', 'https://piko.malts.me/'], [['GitHub'], ['https://github.com/SkyGuardian42/Piko']]]"
 stack:
-  - PHP
-  - MySQL
-  - Pug
-  - Gulp
-  - SCSS
   - JavaScript
-  - NGINX
+  - Service Workers
+  - Workbox
+  - PWA
+  - ParcelJS
+  - Netlify
 featured: false
 ---
 
-Ein cooler Texteditor
+Ein minimalistischer Texteditor als PWA, welcher den eingegebenen Text komprimiert und in der URL speichert. Diese kann geteilt werden, wodurch der Text wiederhergestellt wird.
 
 !--
 
