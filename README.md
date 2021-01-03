@@ -2,14 +2,14 @@
 ```
   [ ] Contact form
     [ ] Other Accounts / Impressum
-    [ ] Submitting
+    [x] Submitting
     [x] Styling
   [ ] SEO
     [x] Favicon
     [x] Manifest File
     [ ] Social Previews
   [ ] Service worker, offline support
-  
+
   [x] Footer
   [x] Headlines for Sections
   [x] Actual Content

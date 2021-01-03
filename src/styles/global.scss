@@ -91,7 +91,9 @@ h2.contact {
   max-width: 90vw;
 
   &.loading > * {
-    transition: transform .1s linear;
+    // transition: transform .1s linear;
+  filter: blur(10px);
+    // transition: none;
   }
   .top, .bot {
     position: absolute!important;
