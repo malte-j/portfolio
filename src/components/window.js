@@ -4,6 +4,12 @@ import { StaticQuery,graphql } from "gatsby"
 import Img from "gatsby-image"
 
 class Window extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {loaded: false};
+    this.ready = this.ready.bind(this)
+  }
+
   componentDidMount() {
     basicScroll.create({
       elem: document.querySelector('.bot'),
@@ -34,14 +40,17 @@ class Window extends React.Component {
     }).start()
   }
 
-  
-
+  ready() {
+    this.setState({
+      loaded: true
+    });
+  }
 
   render() {
     return (
-      <div className="window">
+      <div className={`window ${this.state.loaded?"":"loading"}`}>
           <Img className="bot" loading="eager" fluid={this.props.images.bottom.childImageSharp.fluid}/>
-          <Img className="top" loading="eager" fluid={this.props.images.top.childImageSharp.fluid}/>
+          <Img className="top" onLoad={this.ready} loading="eager" fluid={this.props.images.top.childImageSharp.fluid}/>
       </div>
 
     );

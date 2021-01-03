@@ -10,8 +10,7 @@ import Footer from "../components/footer"
 import ProjectList from "../components/projectList"
 
 export default ({ data }) => {
-  console.log(data)
-  let projects = {
+  const projects = {
     featured: data.featured.edges,
     other: data.other.edges  
   }

@@ -90,13 +90,15 @@ h2.contact {
   width: 35vh;
   max-width: 90vw;
 
+  &.loading > * {
+    transition: transform .1s linear;
+  }
   .top, .bot {
     position: absolute!important;
     height: 100%;
     width: 100%;
     left: 0;
     bottom: 0;
-    // transition: transform .1s linear;
     will-change: transform;
   }
  

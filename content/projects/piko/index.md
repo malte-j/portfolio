@@ -14,7 +14,11 @@ stack:
 featured: false
 ---
 
-Ein minimalistischer Texteditor als PWA, welcher den eingegebenen Text komprimiert und in der URL speichert. Diese kann geteilt werden, wodurch der Text wiederhergestellt wird.
+Ein minimalistischer Texteditor als PWA, welcher den eingegebenen Text komprimiert und in der URL speichert. Diese kann geteilt, und aus ihr der Text wiederhergestellt werden.
+
+
+
+
 
 !--
 
