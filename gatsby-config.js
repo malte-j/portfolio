@@ -11,6 +11,9 @@ module.exports = {
     url: "https://malts.me",
     image: "images/sharing.png",
   },
+  flags: {
+    'DEV_SSR': false
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,11 +30,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: './content/posts',
+      },
+    },
+    {
       "resolve": `gatsby-transformer-remark`,
       "options": {
         "excerpt_separator": `!--`
       }
     },
+    "gatsby-source-instance-name-for-remark",
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
@@ -41,7 +52,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

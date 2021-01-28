@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Nav from "../components/nav"
 
 export default function Template({data}) {
-  // console.log(data)
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
@@ -20,6 +19,8 @@ export default function Template({data}) {
     </div>
   )
 }
+
+//@TODO: figure out where $path gets info from, maybe from this.node ...?
 export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
