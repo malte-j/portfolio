@@ -5,7 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPostTemplate = path.resolve(`src/templates/projectTemplate.js`)
   const result = await graphql(`
     {
-      allMarkdownRemark(filter: {fields: {sourceInstanceName: {eq: "posts"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+      allMarkdownRemark(filter: {fields: {sourceInstanceName: {eq: "posts"}}, frontmatter: {path: {ne: null}}}, sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             fileAbsolutePath

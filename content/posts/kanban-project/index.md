@@ -1,9 +1,8 @@
 ---
-title: Regular Blogpost, no thumbnail
-path: "/blog/mediumexample"
+title: Kanban-Board mit CSS Grid & der Drag and Drop Api
+path: "/blog/kanban-board"
 date: "2021-01-14"
-# thumbnail: "./Aupairadise.jpg"
-# externalLink: "https://medium.com"
+thumbnail: "./todo_thumbnail.jpg"
 ---
 
 Unfassbar toll!
