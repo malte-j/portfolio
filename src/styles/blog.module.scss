@@ -23,9 +23,6 @@
     font-style: italic;
     letter-spacing: 3ch;
   }
-  .date {
-    color: black;
-  }
 }
 
 main.articles {
@@ -49,6 +46,16 @@ main.articles {
     > * + * {
       margin-top: 1rem;
     }
+  }
+
+  .date {
+    color: #404040;
+  }
+
+  .extLinkIcon {
+    height: .9rem;
+    width: auto;
+    margin-right: .8rem;
   }
 }
 

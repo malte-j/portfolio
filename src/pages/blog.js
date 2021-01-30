@@ -1,18 +1,20 @@
 import React from "react";
-import Nav from "../components/nav";
-import Footer from '../components/footer'
-import SEO from "../components/SEO";
+
+import Page from "../components/Page";
 import style from '../styles/blog.module.scss';
 import Img from "gatsby-image";
+import ExternalLink from "../icons/ExternalLink"
+
+
 import { graphql, Link } from 'gatsby';
+
+
 export default ({data}) => {
   
   const posts = data.allMarkdownRemark.edges;
 
   return (
-  <div className="app" style={{"paddingTop": "3rem"}}>
-    <SEO/>
-    <Nav/>
+  <Page seo={{title: "Blog | Malte Janßen"}}>
 
     <header className={style.header}>
       <p>Hey, das hier ist der Kram, der es nicht auf die erste Seite geschafft hat, mein</p>
@@ -27,7 +29,7 @@ export default ({data}) => {
         
 
         if(externalLink) {
-          return [postDate, (<a key={n} href={externalLink}><h2>{title}</h2></a>)]
+          return [postDate, (<a key={n} href={externalLink}><h2><ExternalLink className={style.extLinkIcon}/>{title}</h2></a>)]
         } else if(thumbnail) {
           return [postDate, (<Link key={n} to={path}>
             <Img className={style.thumbnail} fluid={thumbnail.childImageSharp.fluid} />
@@ -39,9 +41,7 @@ export default ({data}) => {
       })}
 
     </main>
-
-    <Footer/>
-  </div>
+  </Page>
 )}
 
 export const pageQuery = graphql`
@@ -55,7 +55,7 @@ export const pageQuery = graphql`
             date(formatString: "DD.MM.YYYY", locale: "de")
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 530, , quality: 70) {
+                fluid(maxWidth: 530, , quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

@@ -2,7 +2,7 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/projectTemplate.js`)
+  const blogPostTemplate = path.resolve(`src/templates/projectTemplate/index.js`);
   const result = await graphql(`
     {
       allMarkdownRemark(filter: {fields: {sourceInstanceName: {eq: "posts"}}, frontmatter: {path: {ne: null}}}, sort: {fields: frontmatter___date, order: DESC}) {
