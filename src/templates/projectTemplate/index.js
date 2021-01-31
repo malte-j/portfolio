@@ -3,12 +3,13 @@ import { graphql } from "gatsby";
 import Page from "../../components/Page";
 import style from "./projectTemplate.module.scss";
 
-//@TODO: Code single blogpost layout
 export default function Template({data}) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, excerpt } = markdownRemark;
+  const thumbnailUrl = frontmatter?.thumbnail?.publicURL;
+
   return (
-    <Page seo={{title: frontmatter.title}}>
+    <Page seo={{title: frontmatter.title, description: excerpt, image: thumbnailUrl}}>
       <article className={style.article}>
         <header>
           <h1>{frontmatter.title}</h1>
@@ -30,10 +31,14 @@ export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      excerpt(format: PLAIN, pruneLength: 150, truncate: false)
       frontmatter {
+        title
         date(formatString: "MMMM YYYY")
         path
-        title
+        thumbnail {
+          publicURL
+        }
       }
     }
   }

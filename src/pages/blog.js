@@ -1,10 +1,10 @@
 import React from "react";
 
 import Page from "../components/Page";
+import "prismjs/themes/prism.css";
 import style from '../styles/blog.module.scss';
 import Img from "gatsby-image";
 import ExternalLink from "../icons/ExternalLink"
-
 
 import { graphql, Link } from 'gatsby';
 
@@ -19,7 +19,6 @@ export default ({data}) => {
     <header className={style.header}>
       <p>Hey, das hier ist der Kram, der es nicht auf die erste Seite geschafft hat, mein</p>
       <h1>blog.</h1>
-      {/* <p>Hier sind alle Projekte, die nicht groß oder interessant genug sind, um auf der Vorderseite zu landen.</p> */}
     </header>
 
     <main className={style.articles}>
@@ -27,7 +26,6 @@ export default ({data}) => {
         const {title, date, externalLink, path, thumbnail} = post.frontmatter;
         let postDate = (<div key={'d' + n} className={style.date}>{ date }</div>);
         
-
         if(externalLink) {
           return [postDate, (<a key={n} href={externalLink}><h2><ExternalLink className={style.extLinkIcon}/>{title}</h2></a>)]
         } else if(thumbnail) {
