@@ -29,8 +29,8 @@ a {
 
   &:hover {
     // font-weight: bold;
-    color: #0702F8;
-    border-color: #0702F8;
+    color: #386D7D;
+    border-color: #386D7D;
   }
 }
 
@@ -92,7 +92,7 @@ h2.contact {
 
   &.loading > * {
     // transition: transform .1s linear;
-  filter: blur(10px);
+    filter: blur(10px);
     // transition: none;
   }
   .top, .bot {
