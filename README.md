@@ -1,13 +1,13 @@
 **ToDo:**
 ```
-  [ ] Contact form
-    [ ] Other Accounts / Impressum
+  [x] Contact form
+    [x] Other Accounts / Impressum
     [x] Submitting
     [x] Styling
-  [ ] SEO
+  [x] SEO
     [x] Favicon
     [x] Manifest File
-    [ ] Social Previews
+    [x] Social Previews
   [ ] Service worker, offline support
 
   [x] Footer
@@ -26,5 +26,5 @@
 **Backlog**
 ```
   [ ] View/Load more Projects
-  [ ] Blog
+  [x] Blog
 ```
