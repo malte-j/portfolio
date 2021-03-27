@@ -37,10 +37,11 @@ module.exports = {
       },
     },
     {
-      "resolve": `gatsby-transformer-remark`,
+      "resolve": `gatsby-plugin-mdx`,
       "options": {
         "excerpt_separator": `!--`,
-        "plugins": [
+        "extensions": [`.md`, `.mdx`],
+        "gatsbyRemarkPlugins": [
           {
             "resolve": `gatsby-remark-images`,
             "options": {
@@ -85,7 +86,7 @@ module.exports = {
         ],
       }
     },
-    "gatsby-source-instance-name-for-remark",
+    "gatsby-plugin-mdx-source-name",
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
