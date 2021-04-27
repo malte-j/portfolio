@@ -44,7 +44,7 @@ export default ({data}) => {
 
 export const pageQuery = graphql`
   query getBlogposts {
-    allMdx(filter: {fields: {source: {eq: "posts"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(filter: {fields: {source: {eq: "posts"}}, frontmatter: {unreleased: {ne: true}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           frontmatter {

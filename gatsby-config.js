@@ -39,6 +39,7 @@ module.exports = {
     {
       "resolve": `gatsby-plugin-mdx`,
       "options": {
+        "commonmark": true,
         "excerpt_separator": `!--`,
         "extensions": [`.md`, `.mdx`],
         "gatsbyRemarkPlugins": [
