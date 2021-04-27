@@ -33,7 +33,7 @@ export default ({projects}) => projects.map(({node: project}) =>
 ) 
 
 export const query = graphql`
-  fragment ProjectInfo on MarkdownRemarkEdge {
+  fragment ProjectInfo on MdxEdge {
     node {
       id
       excerpt(pruneLength: 180)

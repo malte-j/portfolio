@@ -52,12 +52,12 @@ export default ({ data }) => {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    featured: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter: {featured: {eq: true}}}) {
+    featured: allMdx(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter: {featured: {eq: true}}}) {
       edges {
         ...ProjectInfo
       }
     }
-    other: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter: {featured: {eq: false}}}) {
+    other: allMdx(sort: { order: DESC, fields: [frontmatter___date] }, filter: {frontmatter: {featured: {eq: false}}}) {
       edges {
         ...ProjectInfo
       }

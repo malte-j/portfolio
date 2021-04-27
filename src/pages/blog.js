@@ -11,7 +11,7 @@ import { graphql, Link } from 'gatsby';
 
 export default ({data}) => {
   
-  const posts = data.allMarkdownRemark.edges;
+  const posts = data.allMdx.edges;
 
   return (
   <Page seo={{title: "Blog | Malte Janßen"}}>
@@ -44,7 +44,7 @@ export default ({data}) => {
 
 export const pageQuery = graphql`
   query getBlogposts {
-    allMarkdownRemark(filter: {fields: {sourceInstanceName: {eq: "posts"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(filter: {fields: {source: {eq: "posts"}}, frontmatter: {unreleased: {ne: true}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           frontmatter {
