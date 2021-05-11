@@ -4,8 +4,6 @@
   margin: 0 auto;
   padding: 0 1rem;
 
- 
-
   header {
     margin: 5rem 0;
     display: flex;
@@ -28,7 +26,8 @@
 
   p {
     font-size: 1.2rem;
-    margin: 3rem 0;
+    margin: 0;
+    margin-bottom: 1.8rem;
     color: rgb(52, 52, 52);
     line-height: 1.7rem;
   }
@@ -38,18 +37,34 @@
     text-decoration: underline;
   }
 
+
   h1 {
     font-size: 2rem;
   }
 
   h2 {
     text-align: left;
-    margin: 4rem 0 0 0;
-    font-size: 1.7rem;
+    margin: 3.2rem 0 1.3rem 0;
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 3rem 0 1.2rem 0;
+
+    border: none;
   }
 
   ul, li {
-    font-size: inherit;
+    font-size: 1.2rem;
+  }
+
+  caption {
+    display: block;
+    font-size: 1.1rem;
+    color: inherit;
+    margin: -1.2rem 0 1.3rem 0;
+    // font-style: italic;
   }
 
   blockquote {
@@ -102,6 +117,10 @@
 
   code[class*="language-"], pre[class*="language-"] {
     font-family: "IBM Plex Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: .9rem;
+    font-size: 1rem;
+  }
+
+  :global .gatsby-highlight {
+    margin-bottom: 1.6rem
   }
 }
