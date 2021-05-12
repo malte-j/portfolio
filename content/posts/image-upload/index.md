@@ -10,13 +10,15 @@ Images are an integral part of todays web landscape. But a lot of sites aren't u
 
 This is not easy task, but a rewarding one. By now we are all aware of the importance of optimizing the mobile experience, but images are still often overlooked and can be hard to optimize. Different browsers support different image formats (AVIF images are still not supported everywhere), customers may use older or less expensive devices with differing DPI ratios and screen sizes, and some users may access your site using their home network and some using their slow mobile data on the subway.
 
-<div class="example">
+<figure class="wide">
 
 ![avif usage](avif-caniuse.png)
 
-</div>
 
-<caption>AVIF support, 05.2021</caption>
+
+<figcaption>AVIF support, 05.2021</figcaption>
+</figure>
+
 
 For all those szenarios, there is an optimal image format. And because images are, at least for a lot, if not most, sites, the biggest traffic source, this area benefits a lot from optimization.
 
@@ -35,6 +37,8 @@ The upload part is handled by [Multer](https://github.com/expressjs/multer#readm
 We will split the logic into two files, `imagesService.js` and `images.js`, to make the code a little more readable.
 
 First, we generate the middleware for uploading a file that can later be used in a route in `images.js`:
+
+<div class="wider">
 
 ```js
 // src/routes/images/imagesService.js
@@ -73,6 +77,9 @@ export const uploadMiddleware = multer({
 }).single('image')
 ```
 
+</div>
+
+
 We **limit the maximum file size** to prevent abuse, you can raise the limit if your application can handle the increased size.
 
 We also save incoming files directly to disk. This way we can keep our memory consumption low, as the file gets saved to disk while the transfer is going on, so there is no point at which the whole file is loaded in memory.
@@ -80,6 +87,8 @@ We also save incoming files directly to disk. This way we can keep our memory co
 For the filename we use a MongoDB ObjectId. This makes it easy for us to use it as a primary key in our database. Depending on your application, this could actually pose a security risk as ObjectIDs are potentially guessable[^1]. You could change this to use any kind of random string generation you like.
 
 ### Upload logic
+
+<div class="wider">
 
 ```js
 // src/routes/images/imagesService.js
@@ -114,11 +123,15 @@ export async function createImage(image, user) {
 }
 ```
 
+</div>
+
 Next, we provide a function for saving a reference to our image in the database. During this, we also create the LQUIP for the image using sharp and save it as base64 so we can use it directly in a `src` attribute on our frontend.
 
-## Upload route
+### Upload route
 
 Now we just need to access `createImage` and uploadMiddleware in our route. I've also used a middleware called `isAuthenticated`, here you would need to insert your own authentication checks. 
+
+<div class="wider">
 
 ```js
 // src/routes/images/images.js
@@ -138,6 +151,9 @@ router.post('/',
 )
 ```
 
+</div>
+
+
 ## Requesting an image
 
 We could generate a new image on every request, but doing so would be inefficient and slow, especially if the same image is going to be served to a lot of people, like the header of a post.
@@ -146,9 +162,16 @@ Also, when we need to generate a new image, we dont't store the new image in mem
 
 We will implement the following logic to speed up image requests:
 
+<div class="wide">
+
 ![flowchart for generated image](image-request-2.png)
 
+</div>
+
 Now we just need to write our express route. I will explain the single pieces afterwards.
+
+<div class="wide">
+
 
 ```js
 // src/routes/images/images.js
@@ -193,7 +216,7 @@ router.get('/:image',
           .toFormat(format)
 
         // set content and caching headers
-        res.set('Content-Type', `image/${format === 'jpg'? 'jpg' : format}`);        
+        res.set('Content-Type', `image/${format === 'jpg'? 'jpg' : format}`);
         res.set('Cache-Control', 'public, max-age=31536000');
 
         const outputPath = path.join(process.cwd(), 'public/img', filename);
@@ -219,6 +242,9 @@ router.get('/:image',
   }
 )
 ```
+
+</div>
+
 
 ### Validating user input
 
@@ -254,7 +280,11 @@ If all worked well, the user should now have the new generated image, and any su
 
 Caching proved to be highly effective. I made benchmarked requests for all image formats and the results speak for themselves:
 
+<div class="wide">
+
 ![caching benchmark](./cache-speed.png)
+
+</div>
 
 Now your users should be able to upload images and your frontend can request them in any way needed. Using this you should be able to implement all modern image loading techniques.
 
