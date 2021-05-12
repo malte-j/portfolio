@@ -2,13 +2,20 @@
   title: Image Upload and Download API with Dynamic Resizing, LQUIP, Dynamic Image Formats and Caching
   path: "/blog/express-image-upload"
   date: "2021-05-10"
+  thumbnail: "./thumbnail.jpg"
+
 ---
 
 Images are an integral part of todays web landscape. But a lot of sites aren't using the capabilities of modern browsers to their full extent. Using modern techniques, like the native `<picture> `Element, you can let the users browser do all the hard work of determining the optimal format and size for an image, but only if you are able to supply the multitude of required formats.
 
 This is not easy task, but a rewarding one. By now we are all aware of the importance of optimizing the mobile experience, but images are still often overlooked and can be hard to optimize. Different browsers support different image formats (AVIF images are still not supported everywhere), customers may use older or less expensive devices with differing DPI ratios and screen sizes, and some users may access your site using their home network and some using their slow mobile data on the subway.
 
+<div class="example">
+
 ![avif usage](avif-caniuse.png)
+
+</div>
+
 <caption>AVIF support, 05.2021</caption>
 
 For all those szenarios, there is an optimal image format. And because images are, at least for a lot, if not most, sites, the biggest traffic source, this area benefits a lot from optimization.
