@@ -14,13 +14,11 @@ This is not easy task, but a rewarding one. By now we are all aware of the impor
 
 ![avif usage](avif-caniuse.png)
 
-
-
 <figcaption>AVIF support, 05.2021</figcaption>
 </figure>
 
 
-For all those szenarios, there is an optimal image format. And because images are, at least for a lot, if not most, sites, the biggest traffic source, this area benefits a lot from optimization.
+For all those scenario, there is an optimal image format. And because images are, at least for a lot, if not most, sites, the biggest traffic source, this area benefits a lot from optimization.
 
 But how can we achieve this and create a better browsing experience, and thus conversion rates / whatever metric you are optimizing?
 
@@ -32,7 +30,7 @@ The first step for a better image experience begins with image upload.
 
 For this post I've setup a simple Express server connected to a Mongo database, but you are free to use whatever type of database you want.
 
-The upload part is handled by [Multer](https://github.com/expressjs/multer#readme). This an image upload middleware for Express that handles the upload of the raw image by the user. After the initial upload we also generate an LQUIP(low quality image placeholder) using [sharp](https://sharp.pixelplumbing.com/) (we will also use this later to generate different image sizes and formats). This will later be used for loading a blurry preview of the image to reduce the perceived loading time of the image. We can store this low resolution version in our database because it is extremely tiny. This way we can also send it along the first request when a user requests, for example, a post.
+The upload part is handled by [Multer](https://github.com/expressjs/multer#readme). This an image upload middleware for Express that handles the upload of the raw image by the user. After the initial upload we also generate an LQUIP(low quality image placeholder) using [sharp](https://sharp.pixelplumbing.com/) (we will also use this later to generate different image sizes and formats). We use this low resolution preview of the image to reduce the perceived loading time of the image. We can store this low resolution version directly in our database because it is extremely tiny. This way we can also send it along the first request when a user requests, for example, a post.
 
 We will split the logic into two files, `imagesService.js` and `images.js`, to make the code a little more readable.
 
@@ -270,11 +268,9 @@ In case an error occurs, e.g. the image is not available, we also need to catch 
 
 Sharp has the ability to stream the newly generated image. As already mentioned, we use this to keep memory usage low and **immediately start sending the image** to the user, even if the resize has not done yet, saving a lot of time.
 
- We create a new file and stream its output to disk, but also to the user. But because express doesn't what kind of data we are sending, we have to set the `Content-Type` and `Cache-Control` headers manually.
-
+We create a new file and stream its output to disk, but also to the user. But because express doesn't what kind of data we are sending, we have to set the `Content-Type` and `Cache-Control` headers manually.
 
 If all worked well, the user should now have the new generated image, and any subsequent requests to the same file should be nearly instantaneous, because we **cache** the generated image as a file. 
-
 
 ## Wrapping up
 
