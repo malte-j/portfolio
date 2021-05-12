@@ -66,7 +66,7 @@ Diese kann man dann in einzelnen Klassen wie folgt verwenden:
 
 ![Screenshot](screenshot.jpg)
 
-Genau diese Strategie habe ich in meinem Web Engineering Projekt, [todo.](todo.malts.me) getestet, und sehr gute Erfahrungen gemacht. Die vordefinierten Größen und Farben machen die Entwicklung deutlich angenehmer und vereinfachten mir in vielen Fällen den Designprozess.
+Genau diese Strategie habe ich in meinem Web Engineering Projekt, [todo.](https://todo.malts.me) getestet, und sehr gute Erfahrungen gemacht. Die vordefinierten Größen und Farben machen die Entwicklung deutlich angenehmer und vereinfachten mir in vielen Fällen den Designprozess.
 
 Mit global definierten Farben konnte ich zum Beispiel unfassbar einfach dafür sorgen, dass alle Schatten den selben Blauton verwenden, obwohl sie verschieden größen haben, oder dass das Rot für Formularfehler überall einheitlich ist.
 
