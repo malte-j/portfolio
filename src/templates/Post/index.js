@@ -1,5 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
+
 import Page from "../../components/Page";
 import "./post.scss";
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -12,9 +14,16 @@ export default function Template({data}) {
   return (
     <Page seo={{title: frontmatter.title, description: excerpt, image: thumbnailUrl}}>
       <article className="blog-article">
-        <header>
-          <h2>{frontmatter.date}</h2>
-          <h1>{frontmatter.title}</h1>
+        <header class={frontmatter.thumbnail ? 'hasThumbnail': ''}>
+          {
+            frontmatter.thumbnail ? 
+            <Img className="thumbnail" fluid={frontmatter.thumbnail.childImageSharp.fluid} />
+            : undefined
+          }
+          <div className="title">
+            <h2>{frontmatter.date}</h2>
+            <h1>{frontmatter.title}</h1>
+          </div>
         </header>
         <main>
           <MDXRenderer className="blog-post-content">{body}</MDXRenderer>
@@ -24,7 +33,6 @@ export default function Template({data}) {
   )
 }
 
-//@TODO: figure out where $path gets info from, maybe from this.node ...?
 export const pageQuery = graphql`
   query($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
@@ -36,6 +44,11 @@ export const pageQuery = graphql`
         path
         thumbnail {
           publicURL
+          childImageSharp {
+            fluid(maxWidth: 1100, , quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
         }
       }
     }

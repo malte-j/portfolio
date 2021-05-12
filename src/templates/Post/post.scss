@@ -4,11 +4,45 @@
   padding: 0 1.2rem;
 
   header {
-    margin: 5rem auto;
+    margin: 4rem auto 4rem auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    max-width: 40rem;
+    align-items: center;
+
+    &.hasThumbnail {
+      margin: 4rem auto 0 auto;
+
+      .thumbnail {
+        max-width: 60rem;
+        width: 100%;
+      } 
+      .title {
+        transform: translateY(-6rem);
+        background-color: white;
+        padding: 3rem 2rem 0 2rem;
+        transition: transform .2s ease-in-out;
+        will-change: transform;
+      }
+
+      @media(max-width: 40rem) {
+        .title {
+          transform: translateY(0rem);
+          padding: 2rem 2rem 3rem 2rem;
+
+        }
+      }
+
+    }
+
+    .title {
+      max-width: 45rem;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 0;
+    }
+  
     h1 {
       font-size: 1.6rem;
       line-height: 1.7;
@@ -17,12 +51,7 @@
     h2 {
       font-size: 1rem;
       color: rgb(50, 50, 50);
-
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin: 0;
+      margin-bottom: 1rem;
     }
   }
 
