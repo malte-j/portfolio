@@ -17,7 +17,7 @@ export default ({title, description, image}) => {
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://malts.me" />
+    {/* <meta property="og:url" content="https://malts.me" /> */}
     <meta property="og:locale" content="de_DE" />
     <meta property="og:image" content={`https://malts.me${image}`} />
 
