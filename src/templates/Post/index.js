@@ -14,7 +14,7 @@ export default function Template({data}) {
   return (
     <Page seo={{title: frontmatter.title, description: excerpt, image: thumbnailUrl}}>
       <article className="blog-article">
-        <header class={frontmatter.thumbnail ? 'hasThumbnail': ''}>
+        <header className={frontmatter.thumbnail ? 'hasThumbnail': ''}>
           {
             frontmatter.thumbnail ? 
             <Img className="thumbnail" fluid={frontmatter.thumbnail.childImageSharp.fluid} />

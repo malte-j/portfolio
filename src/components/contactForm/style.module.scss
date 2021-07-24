@@ -34,6 +34,10 @@
   input:focus + label, textarea:focus + label, .filled + label {
     transform: translate(-1rem, -2.5rem);
     color: #0f0f0f;
+    [data-theme="dark"] & {
+    color: var(--colText);
+
+    }
   }
 
   textarea {
@@ -41,21 +45,22 @@
   }
 
   button {
-    border: 1px solid black;
+    border: 1px solid var(--colText);
     background: none;
     padding: .8rem;
     font-family: inherit;
+    color: var(--colText);
 
     &:hover, &:focus {
-      color: white;
-      background-color: black;
-      border-color: black;
+      color: var(--colBackground);
+      background-color: var(--colText);
+      border-color: var(--colText);
     }
 
     &:active {
       color: white;
-      background-color: #0702F8;
-      border-color: #0702F8;
+      background-color: #386D7D;
+      border-color: #386D7D;
     }
   }
 }
