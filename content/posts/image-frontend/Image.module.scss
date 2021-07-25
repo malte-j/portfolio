@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+
+  
+  picture {
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(12px);
+      opacity: 1;
+      transition: opacity 0.2s ease-in;
+      pointer-events: none;
+    }
+
+    &[data-loading="false"]::after {
+      opacity: 0;
+    }
+  }
+}
