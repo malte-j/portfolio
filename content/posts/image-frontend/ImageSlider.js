@@ -24,7 +24,7 @@ export default () => {
   }
 
   function handleSliderChange(e) {
-    if (!videoRef.current) return;
+    if (!videoRef.current) return
     videoRef.current.currentTime = videoRef.current.duration * (e / 100)
 
     const step = () => {
@@ -38,12 +38,20 @@ export default () => {
     <div style={{ marginBottom: "1.8rem" }}>
       <video
         autoPlay="true"
+        muted="true"
         onPlay={() => {
           videoRef.current.pause()
           drawImage()
         }}
         ref={videoRef}
-        style={{ width: "100%", height: "auto", aspectRatio: "608/240", position: "absolute", visibility: "hidden" }}
+        style={{
+          width: "1%",
+          aspectRatio: "608/240",
+          position: "absolute",
+
+          visibility: "hidden",
+
+        }}
         src="/lqip_loading_blur_up.mp4"
       />
       <canvas
