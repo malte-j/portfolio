@@ -9,3 +9,19 @@
     margin: 0;
   }
 }
+
+.themeToggle {
+  height: 1.2rem;
+  cursor: pointer;
+  background: none;
+  border-radius: none;
+  border: none;
+  outline: none;
+  padding: none;
+  margin: none;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
