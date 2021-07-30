@@ -37,8 +37,8 @@ export default () => {
   return (
     <div style={{ marginBottom: "1.8rem" }}>
       <video
-        autoPlay="true"
-        muted="true"
+        autoPlay={true}
+        muted={true}
         onPlay={() => {
           videoRef.current.pause()
           drawImage()
