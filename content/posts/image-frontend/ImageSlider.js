@@ -6,7 +6,6 @@ export default () => {
 
 
   function setTime(percentage) {
-    console.log(percentage)
     if(!videoRef.current) return
 
     videoRef.current.currentTime = videoRef.current.duration * (percentage / 100)

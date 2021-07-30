@@ -1,6 +1,6 @@
 .wrapper {
   position: relative;
-
+  z-index: -1;
   
   picture {
     &::after {
@@ -20,4 +20,38 @@
       opacity: 0;
     }
   }
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &[data-clicked="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.loadButton {
+  // display: block;
+  // margin: 1rem auto;
+  // font-weight: 600;
+  // transform: translateY(00px);
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: var(--monospace);
+  // background: var(--colBackground);
+  // color: var(--colText);
+  // border: 1px solid var(--colText);
+  background: #fff;
+  color: #121212;
+  border: 1px solid #121212;
 }

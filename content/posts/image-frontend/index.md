@@ -1,7 +1,9 @@
 ---
-title: Writing the perfect Image Component
+title: Creating the perfect Image Component
 path: "/blog/perfect-images"
 date: "2021-07-24"
+thumbnail: "./thumbnail.jpg"
+
 ---
 
 import ImgSrcset from './ImgSrcset';
@@ -12,9 +14,10 @@ import ReactImageLqipBlur from './ReactImageLqipBlur';
 import ImageSlider from './ImageSlider';
 
 With the right optimizations, you can **save ~80% on every image** you load.<br/>
-If you can lower your load time by just 4 seconds, your probability for a **page bounce** will likely **decrease by ~90%**[^1].
+If you can lower your load time by just 4 seconds, your probability for a page bounce could 
+decrease by as much as **90%**[^1].
 
-This should be reason enough for us to take image loading serious.
+This should be reason enough to take a closer look at modern image loading capabilities.
 
 What then, are the steps that we can take, in order for us to load the best possible image? To decrease the required image size, we could:
 
@@ -358,7 +361,7 @@ After all this, we finally have a the **finished image component** with LQIP and
 
 You can take a look at the real thing. I've added an artificial delay so you can see the effect more easily:
 
-<figure>
+<figure style={{"position": "relative"}}>
   <ReactImageLqipBlur
     id="ocean"
     width={560}
@@ -385,7 +388,7 @@ There are, however, still some shortcomings that could make this not ideal for y
 
 Although these are valid concerns, they mostly won't apply if you are loading images in your SPA where routing is done clientside and the user has already downloaded all scripts.
 
-Thank you for reading all of this, if you found an mistake or just want to reach out, you can message me on [twitter](https://twitter.com/mlte_ ) or send a mail to [hi@malts.me](mailto:hi@malts.me)
+Thank you for reading all of this, if you found a mistake or just want to reach out, you can dm me on [twitter](https://twitter.com/mlte_ ) or send me an email at [hi@malts.me](mailto:hi@malts.me).
 
 [^1]: https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/
 [^2]: Image by https://unsplash.com/@corrynewooten
