@@ -29,7 +29,14 @@ What then, are the steps that we can take, in order for us to load the best poss
 
 This is what our finished component will look like while loading on a slow connection (drag the slider to see the change):
 
-<ImageSlider/>
+<ImageSlider
+    id="ocean"
+    width={560}
+    height={234}
+    sizes={["(min-width: 610px) 40rem","calc(100vw - 2.4rem)"]}
+    widths={[1120, 840, 560, 340]}
+    lqip="/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIEBf/EACMQAAECBQMFAAAAAAAAAAAAAAEAAgMEBQYREyExEiSDobP/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAQL/xAAYEQEBAAMAAAAAAAAAAAAAAAABAAIRIf/aAAwDAQACEQMRAD8AuQLpmonVDFKrkBx21IbHnBPGzmY9KboVVmck1O5mHksG2AfEiJgEJyV7Yk3K1LWPeXW/PBbnHzREWtFb/9k="
+/>
 
 How can we achieve this? The first step is using the correct HTML element.
 

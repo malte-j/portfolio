@@ -19,8 +19,13 @@
     &[data-loading="false"]::after {
       opacity: 0;
     }
+
+    &.sliderPicture::after {
+      opacity: var(--opacity);
+    }
   }
 }
+
 
 .buttonWrapper {
   display: flex;
