@@ -1,7 +1,7 @@
 ---
 title: Creating the perfect Image Component
 path: "/blog/perfect-images"
-date: "2021-07-24"
+date: "2021-07-30"
 thumbnail: "./thumbnail.jpg"
 
 ---
