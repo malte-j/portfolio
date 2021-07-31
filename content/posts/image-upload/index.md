@@ -284,6 +284,6 @@ Caching proved to be highly effective. I made benchmarked requests for all image
 
 Now your users should be able to upload images and your frontend can request them in any way needed. Using this you should be able to implement all modern image loading techniques.
 
-The frontend part will be covered in **part two** (coming soon) of this series.
+If you want to know how to implement this in your frontend, take a look at [part two](https://malts.me/blog/perfect-images), where you will learn how to optimally load images using modern techniques.
 
 [^1]: https://stackoverflow.com/questions/11577450/are-mongodb-ids-guessable
