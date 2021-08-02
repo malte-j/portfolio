@@ -19,13 +19,13 @@ decrease by as much as **90%**[^1].
 
 This should be reason enough to take a closer look at modern image loading capabilities.
 
-What then, are the steps that we can take, in order for us to load the best possible image? To decrease the required image size, we could:
+What then are the steps that we can take in order for us to load the best possible image? To decrease the required image size, we could:
 
 - use a smaller, modern image format if supported, e.g. AVIF
 - download the image that is closest to the rendered size in the DOM
 - use a fitting image for different display densities
 - show a preview while loading the full-size image to improve perceived performance
-- let the browser have the final say on which image gets loaded; it could for example load a smaller image when the network is particularly slow, or if the user has a data saver mode enabled
+- let the browser have the final say on which image gets loaded. It could for example load a smaller image when the network is particularly slow or if the user has a data saver mode enabled
 
 This is what our finished component will look like while loading on a slow connection (drag the slider to see the change):
 
@@ -44,7 +44,7 @@ How can we achieve this? The first step is using the correct HTML element.
 
 The traditional way of using an `<img>` tag clearly won't suffice. So what are the alternatives?
 
-HTML offers us a way to define multiple different versions of an image in a single element: using the `srcset` attribute combined with the `sizes` attribute. In the `srcset` we can define multiple images and tell the browser the width of each, and using `sizes` we can tell the browser the approximate size of the image in the viewport in a CSS like syntax, so the image can start downloading without needing to layout the whole page first.
+HTML offers us a way to define multiple different versions of an image in a single element: using the `srcset` attribute combined with the `sizes` attribute. In the `srcset` we can define multiple images and tell the browser the width of each, and using `sizes` we can tell the browser the approximate size of the image in the viewport in a CSS like syntax so the image can start downloading without needing to layout the whole page first.
 
 An `<img>` tag for an image embedded in a blogpost could look like this:
 
@@ -65,7 +65,7 @@ An `<img>` tag for an image embedded in a blogpost could look like this:
 />
 ```
 
-This tells the browser that the image has a size of `calc(100vw - 2.4rem)`, as an image spans the full width minus the padding, and at a window width of 610px, the image has the maximum size of the blogpost container, 40rem(~560px). We also add the `src` attribute as a fallback for browsers that don't support `srcset`, as well as a width and height, so the browser can reserve space for the image before its loaded, avoiding layout shift. If you want, you can open the inspector and see what size your browser loads the following image[^2] at:
+This tells the browser that the image has a size of `calc(100vw - 2.4rem)`, as an image spans the full width minus the padding, and at a window width of 610px, the image has the maximum size of the blogpost container, 40rem(~560px). We also add the `src` attribute as a fallback for browsers that don't support `srcset`, as well as a width and height, so the browser can reserve space for the image before it's loaded, avoiding layout shift. If you want, you can open the inspector and see what size your browser loads the following image[^2] at:
 
 <figure>
   <ImgSrcset />
@@ -114,7 +114,7 @@ The second option is using the `<picture>` tag. It supports multiple `<source>` 
 </picture>
 ```
 
-You can see that the `<source>` tag looks a lot like our previous image tag, just that we now set the type as an attribute. We also add an `<img>` tag as a fallback, thats get ignored by every browser that supports the `<picture>` tag. Here is how all this looks like, feel free to take a look in the inspector:
+You can see that the `<source>` tag looks a lot like our previous image tag, just that we now set the type as an attribute. We also add an `<img>` tag as a fallback, which would be ignored by every browser that supports the `<picture>` tag. Here is how all this looks like, feel free to take a look in the inspector:
 
 <figure>
   <PictureExample />
@@ -229,9 +229,9 @@ In the end, there should be no difference between the generated `<picture>` elem
 
 To decrease perceived loading times, we want to show the user a low resolution placeholder of our image while the real image is loading in the background.
 
-We can achieve this by at first rendering the image with its `srcset` pointing to the placeholder and storing the _real_ `srcset` in the `data-srcset` attribute. Then, we replace the `srcset` with the _real_ `srcset` immediatly.
+We can achieve this by at first rendering the image with its `srcset` pointing to the placeholder and storing the _real_ `srcset` in the `data-srcset` attribute. Then we replace the `srcset` with the _real_ `srcset` immediatly.
 
-Normally we would assume that if we do this, the browser will show our placeholder for a fraction of a second, and then switch to an empty image while the real on is loading, and then show the full image. But the browser is actually quite clever, it shows the last complete image as long as the new one is not fully loaded, so we never see the blank image.
+Normally we would assume that if we do this, the browser will show our placeholder for a fraction of a second, and then switch to an empty image while the real one is loading, and then show the full image. But the browser is actually quite clever. It shows the last complete image as long as the new one is not fully loaded, so we never see the blank image.
 
 To set all srcsets in the picture element, we will access it using the `useRef` hook:
 
@@ -302,9 +302,9 @@ This is already pretty good, but there are still some issues we can fix.
 
 ### How to make the loading actually look good?
 
-You might notice that the blur doesn't look as good as a regular blurred image. This is because the browser applies a faster but less accurate blurring algorithm. If we want to have a nice, smooth gaussian blur, we need to add this ourselves with some CSS. Altough you have to be cautions when doing so, as blurring too many large images on a page might affect the performance, especially on mobile devices.
+You might notice that the blur doesn't look as good as a regular blurred image. This is because the browser applies a faster but less accurate blurring algorithm. If we want to have a nice, smooth gaussian blur, we need to add this ourselves with some CSS. Although you have to be cautions when doing so, as blurring too many large images on a page might affect the performance, especially on mobile devices.
 
-To apply CSS depending on wether the image has loaded already, we can attach an `onLoad` event listener to the `<img>` `element` and set the `data-loaded` attribute on the picture element:
+To apply CSS depending on whether the image has loaded already, we can attach an `onLoad` event listener to the `<img>` `element` and set the `data-loaded` attribute on the picture element:
 
 ```tsx
 function onLoadFinished() {
@@ -313,7 +313,7 @@ function onLoadFinished() {
 }
 ```
 
-We will add the eventListener in another `useEffect` hook, which needs to execute after the hook that sets the correct srcset, otherwise the `onLoadFinished` will get triggered by the placeholder loading. We also return a function to remove the event listener on unmount to prevent memory leaks:
+We will add the eventListener in another `useEffect` hook, which needs to execute after the hook that sets the correct srcset. Otherwise the `onLoadFinished` will get triggered by the placeholder loading. We also return a function to remove the event listener on unmount to prevent memory leaks:
 
 ```tsx
 // this needs to happen after the srcset gets switched, otherwise
@@ -331,7 +331,7 @@ useEffect(() => {
 }, [])
 ```
 
-The CSS part seems trivial, but isn't. The first instinct is to add `backdrop-filter: blur(...)` to the img element, but this leaves the image with blurry edges that bleed into the surrounding content. If we want clean, crisp edges, we have to use a helper element, e.g. the `::after` of the `<picture>` element, and set a regular `filter: blur(...)` on it:
+The CSS part seems trivial, but isn't. The first instinct is to add `backdrop-filter: blur(...)` to the img element, but this leaves the image with blurry edges that bleed into the surrounding content. If we want clean, crisp edges, we have to use a helper element, e.g. the `::after` of the `<picture>` element and set a regular `filter: blur(...)` on it:
 
 ```css
 .wrapper {
@@ -391,7 +391,7 @@ Event though there's definetly still room for further optimization, this post sh
 There are, however, still some shortcomings that could make this not ideal for your usecase:
 
 - this approach requires JavaScript, which means that the image loading won't happen until execution finishes. This wouldn't impact performance at all in SPA's on consecutive page loads, but could seriously impact the first load time of a page
-- The function to replace the img src triggers immediatly. This could be replaced with an Intersection Observer that doesn't start the image loading until the image is close to the viewport
+- The function to replace the img src triggers immediately. This could be replaced with an Intersection Observer that doesn't start the image loading until the image is close to the viewport
 
 Although these are valid concerns, they mostly won't apply if you are loading images in your SPA where routing is done clientside and the user has already downloaded all scripts.
 
