@@ -1,0 +1,96 @@
+import React from "react";
+
+import Page from "../components/Page";
+import "prismjs/themes/prism.css";
+import * as style from "../styles/blog.module.scss";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ExternalLink from "../icons/ExternalLink";
+
+import { graphql, Link } from "gatsby";
+
+export default function Blog({ data }) {
+  const posts = data.allMdx.edges;
+
+  return (
+    <Page seo={{ title: "Blog | Malte Janßen" }}>
+      <header className={style.header}>
+        <p>
+          Hey, das hier ist der Kram, der es nicht auf die erste Seite geschafft
+          hat, mein
+        </p>
+        <h1>blog.</h1>
+      </header>
+
+      <main className={style.articles}>
+        {posts.map(({ node: post }, n) => {
+          const { title, date, externalLink, path, thumbnail } =
+            post.frontmatter;
+          let postDate = (
+            <div key={"d" + n} className={style.date}>
+              {date}
+            </div>
+          );
+
+          if (externalLink) {
+            return [
+              postDate,
+              <a key={n} href={externalLink}>
+                <h2>
+                  <ExternalLink className={style.extLinkIcon} />
+                  {title}
+                </h2>
+              </a>,
+            ];
+          } else if (thumbnail) {
+            return [
+              postDate,
+              <Link key={n} to={path}>
+                <GatsbyImage
+                  image={getImage(thumbnail)}
+                  alt={"preview image"}
+                />
+
+                <h2>{title}</h2>
+              </Link>,
+            ];
+          } else {
+            return [
+              postDate,
+              <Link key={n} to={path}>
+                {title}
+              </Link>,
+            ];
+          }
+        })}
+      </main>
+    </Page>
+  );
+};
+
+export const pageQuery = graphql`
+  query getBlogposts {
+    allMdx(
+      filter: {
+        fields: { source: { eq: "posts" } }
+        frontmatter: { unreleased: { ne: true } }
+      }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            date(formatString: "DD.MM.YYYY", locale: "de")
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(width: 530)
+              }
+            }
+            externalLink
+          }
+        }
+      }
+    }
+  }
+`;
