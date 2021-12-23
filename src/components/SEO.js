@@ -28,7 +28,6 @@ export default function SEO({title, description, image}) {
     <meta name="description" content={description} />
     <meta name="language" content="DE"/>
     
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans&display=swap" rel="stylesheet"/>
   </Helmet>
 )}
 

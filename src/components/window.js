@@ -1,6 +1,5 @@
 import React from "react";
 import * as basicScroll from "basicscroll";
-// import { StaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 export default class Window extends React.Component {
@@ -53,17 +52,13 @@ export default class Window extends React.Component {
   render() {
     return (
       <div className={`window ${this.state.loaded ? "" : "loading"}`}>
-        {/* <Img className="bot" loading="eager" fluid={this.props.images.bottom.childImageSharp.fluid}/>
-          <Img className="top" onLoad={this.ready} loading="eager" fluid={this.props.images.top.childImageSharp.fluid}/> */}
-
         <StaticImage
           src="../../static/bottom.png"
           className="bot"
           width={460}
           quality={90}
-          
-          blurredOptions={{
-            toFormat: "jpg"
+          style={{
+            "--tx": "0",
           }}
           alt="A kitten"
         />
@@ -72,8 +67,8 @@ export default class Window extends React.Component {
           className="top"
           width={460}
           alt="A kitten"
-          blurredOptions={{
-            toFormat: "jpg"
+          style={{
+            "--tx": "0",
           }}
           onLoad={this.ready}
         />
@@ -81,27 +76,3 @@ export default class Window extends React.Component {
     );
   }
 }
-
-// export default () => (
-//   <StaticQuery
-//     query={graphql`
-//       query MyQuery {
-//         bottom: file(relativePath: { eq: "bottom.png" }) {
-//           childImageSharp {
-//             fluid(maxWidth: 470) {
-//               ...GatsbyImageSharpFluid_withWebp
-//             }
-//           }
-//         }
-//         top: file(relativePath: { eq: "top.png" }) {
-//           childImageSharp {
-//             fluid(maxWidth: 470, quality: 80) {
-//               ...GatsbyImageSharpFluid_withWebp
-//             }
-//           }
-//         }
-//       }
-//     `}
-//     render={(images) => <Window images={images} />}
-//   />
-// );

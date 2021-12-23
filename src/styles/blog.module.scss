@@ -9,9 +9,7 @@
   > * {
     font-size: 1rem;
     margin: 0;
-    // max-width: calc(550px + 10ch);
     max-width: 90ch;
-
     text-align: center;
   }
 
@@ -49,7 +47,7 @@ main.articles {
   }
 
   .date {
-    color: var(colTextSecondary);
+    color: var(--colTextSecondary);
   }
 
   .extLinkIcon {

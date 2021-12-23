@@ -16,7 +16,3 @@ featured: true
 ---
 
 Eine Webseite für das Olantis Huntebad, um Anmeldungen für ein Schwimmevent zu sammeln. Das Frontend generiert PHP mit Gulp, welches die Anmeldedaten dann in MySQL speichert.
-
-!--
-
-Unfassbar toll!

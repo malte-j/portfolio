@@ -50,6 +50,7 @@
     padding: .8rem;
     font-family: inherit;
     color: var(--colText);
+    cursor: pointer;
 
     &:hover, &:focus {
       color: var(--colBackground);

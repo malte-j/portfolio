@@ -63,20 +63,20 @@
   }
 
   main {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: var(--sansSerif), sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     >* {
       width: 100%;
-      max-width: 40rem;
+      max-width: 45rem;
     
       &.wide {
-        max-width: 50rem;
+        max-width: 55rem;
       }
 
       &.wider {
-        max-width: 45rem;
+        max-width: 60rem;
       }
     }
 
@@ -171,6 +171,10 @@
     }
   }
 
+  strong {
+    font-weight: 600;
+  }
+
   :global .footnotes {
     ol {
       padding: 0;
@@ -187,12 +191,14 @@
     }
   }
 
+
+
   :global .task-list-item {
     list-style: none;
   }
 
   code[class*="language-"], pre[class*="language-"] {
-    font-family: "IBM Plex Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-family: var(--monospace), Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 1rem;
   }
 

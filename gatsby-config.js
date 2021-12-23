@@ -4,6 +4,7 @@ module.exports = {
     description:
       "Website und Portfolio von Malte Janßen, Webentwickler und Student.",
     url: "https://malts.me",
+    siteUrl: "https://malts.me",
     image: "/sharing.png",
   },
   plugins: [

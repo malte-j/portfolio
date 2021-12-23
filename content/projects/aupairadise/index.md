@@ -17,7 +17,3 @@ featured: true
 ---
 
 Ein statisch generierter Blog für Luise Fuhrhop, generiert mit Gatsby und mit Ghost als Headless-CMS, gehostet auf Netlify und Vultr. Ich habe das komplette Design und die technische Umsetzung übernommen.
-
-!--
-
-Unfassbar toll!

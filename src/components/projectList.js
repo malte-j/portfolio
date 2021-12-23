@@ -21,7 +21,6 @@ export default function projectList(data) {
           <h3 className="project__header__title">
             {project.frontmatter.title}
           </h3>
-          {/* <Link className="project__header__title" to={project.frontmatter.path}>{project.frontmatter.title}</Link> */}
           <p className="project__header__date">{project.frontmatter.date}</p>
         </div>
         <p className="project__about">{project.excerpt}</p>
@@ -53,7 +52,7 @@ export const query = graphql`
   fragment ProjectInfo on MdxEdge {
     node {
       id
-      excerpt(pruneLength: 180)
+      excerpt(pruneLength: 2000)
       frontmatter {
         title
         date(formatString: "MMMM YYYY", locale: "de")
@@ -63,10 +62,10 @@ export const query = graphql`
         thumbnail {
           childImageSharp {
             gatsbyImageData(
-              width: 530
+              width: 560
               quality: 90
               placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
+              formats: [AUTO, WEBP]
             )
           }
         }
