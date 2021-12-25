@@ -55,18 +55,20 @@ export default class Window extends React.Component {
         <StaticImage
           src="../../static/bottom.png"
           className="bot"
-          width={460}
+          width={920}
+          placeholder="blurred"
           quality={90}
           style={{
             "--tx": "0",
           }}
-          alt="A kitten"
+          alt="bottom header image"
         />
         <StaticImage
           src="../../static/top.png"
           className="top"
-          width={460}
-          alt="A kitten"
+          width={920}
+          placeholder="blurred"
+          alt="top header image"
           style={{
             "--tx": "0",
           }}
