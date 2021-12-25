@@ -7,7 +7,7 @@ import Nav from "../components/nav"
 import Contact from "../components/contactForm"
 import Seo from "../components/SEO"
 import Footer from "../components/footer"
-import ProjectList from "../components/projectList"
+import ProjectList from "../components/ProjectList/ProjectList"
 
 export default function Index({ data }) {
   const projects = {

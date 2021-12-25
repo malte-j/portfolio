@@ -1,5 +1,5 @@
 {
-  "name": "malte-jan-en",
+  "name": "malts-me",
   "version": "1.0.0",
   "private": true,
   "description": "Malte Janßen",
@@ -8,7 +8,6 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",

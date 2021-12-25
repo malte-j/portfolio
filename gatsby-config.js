@@ -20,6 +20,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
@@ -52,7 +60,6 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         commonmark: true,
-        // "excerpt_separator": `!--`,
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
           {
@@ -81,21 +88,5 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
   ],
 };

@@ -1,8 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import "./ProjectList.scss";
 
-export default function projectList(data) {
+export default function ProjectList(data) {
   return data.projects.map(({ node: project }) => (
     <article
       className="project"

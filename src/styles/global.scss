@@ -6,11 +6,13 @@
   @return m#{a}x(#{$numbers});
 }
 
-@function min($numbers...){
+@function min($numbers...) {
   @return m#{i}n(#{$numbers});
 }
 
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 :root {
   // font-size: min(20px,max(16px, calc(0.01vw + 5px)));
@@ -31,19 +33,19 @@
 
 body {
   font-size: 1rem;
-  margin:0;
-  font-family: 'Space Mono', monospace;
+  margin: 0;
+  font-family: "Space Mono", monospace;
   background-color: var(--colBackground);
   color: var(--colText);
-  
-  --monospace: 'Space Mono', monospace;
-  --sansSerif: 'Inter', sans-serif;
+
+  --monospace: "Space Mono", monospace;
+  --sansSerif: "Inter", sans-serif;
 
   --colBackground: #ffffff;
   --colText: #0a0a0a;
   --colTextSecondary: #303030;
   --colTextTertiary: #444444;
-  
+
   &[data-theme="dark"] {
     --colBackground: #121214;
     --colText: #eeeeee;
@@ -59,12 +61,17 @@ a {
 
   &:hover {
     // font-weight: bold;
-    color: #386D7D;
-    border-color: #386D7D;
+    color: #386d7d;
+    border-color: #386d7d;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   font-size: inherit;
 }
@@ -79,7 +86,7 @@ h2 {
   margin-bottom: 10vh;
 }
 
-h3 { 
+h3 {
   font-size: inherit;
   margin: 0;
   // border-bottom: 1px solid var(--colText)
@@ -106,7 +113,7 @@ h2.contact {
     text-align: center;
     font-size: 1.2rem;
 
-    >* {
+    > * {
       margin: 3rem 0;
     }
   }
@@ -125,22 +132,23 @@ h2.contact {
     filter: blur(10px);
     // transition: none;
   }
-  .top, .bot {
-    position: absolute!important;
+  .top,
+  .bot {
+    position: absolute !important;
     height: 100%;
     width: 100%;
     left: 0;
     bottom: 0;
     will-change: transform;
   }
- 
+
   .bot {
     transform: translateY(var(--tx)) scale(1.2);
   }
-  
+
   .top {
     transform: translateY(var(--tx)) scale(1.2);
-  } 
+  }
 }
 
 .about {
@@ -153,110 +161,16 @@ h2.contact {
   margin-bottom: 1.8rem;
 }
 
-
-.projects {
-  max-width: 1125px;
-  padding: 1rem;
-  margin: 0 auto;
-  overflow: hidden;
-
-  .project {
-    display: flex;
-    &:not(:last-child) {
-      margin-bottom: 100px;
-    }
-
-    &__thumbnail {
-      overflow: hidden;
-      margin-right: 3vw;
-      flex: 1;
-    }
-
-    &__details {
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      flex: 1;
-      gap: 1rem;
-    }
-
-    &__header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-
-      &__date {
-        margin: 0;
-      }
-
-      &__title {
-        font-size: 1.2rem;
-        color: inherit;
-        text-decoration: none;
-      }
-    }
-    
-    &__about {
-      margin: 0;
-    }
-
-    &__stack {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      flex-grow: 1;
-
-      li {
-        display: inline;
-        font-style: italic;
-
-        &:not(:last-child)::after {
-          content: ", ";
-        }
-      }
-    }
-
-    &__links {
-      display: flex;
-      justify-content: space-between;
-      margin: 0;
-      padding: 0;
-
-      li {
-        list-style-type: none;
-        word-wrap: none;        
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 600px) {
-  .projects {
-    .project {
-      flex-direction: column;
-      
-      &__thumbnail {
-        margin: 0;
-      }
-  
-      &__details {
-        margin: 0;
-        >* {
-          margin-top: 2rem;
-        }
-      }
-    }
-  }
-
   .header {
     flex-direction: column-reverse;
     overflow: hidden;
 
-    .info p, .info a {
+    .info p,
+    .info a {
       margin: 2rem 0;
     }
-    
+
     .spacer {
       width: 0;
       height: 6vw;
@@ -271,7 +185,6 @@ nav {
   top: 0;
   width: 100%;
   background: #fff;
-
 
   .inner {
     height: 100%;
@@ -294,12 +207,15 @@ nav {
 @supports (backdrop-filter: blur(10px)) {
   nav {
     background: rgba(255, 255, 255, 0.8);
-    [data-theme="light"] &{
+
+    [data-theme="light"] & {
       background: rgba(255, 255, 255, 0.8);
     }
-    [data-theme="dark"] &{
+
+    [data-theme="dark"] & {
       background: rgba(31, 31, 31, 0.8);
     }
+    
     backdrop-filter: blur(20px);
   }
 }
