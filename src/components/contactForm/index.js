@@ -21,7 +21,7 @@ class ContactForm extends React.Component {
   render() {
     return (
       <section className={style.contact} id="contact">
-        <form name="contact" onSubmit={this.handleSubmit} method="POST" data-netlify="true">
+        <form name="contact" onSubmit={this.handleSubmit} method="POST" action="/contact">
         <input type="hidden" name="form-name" value="contact" />
           <div className={style.inputWrapper}>
             <input type="text" name="name" id="form_name" onChange={this.change} ref={this.name} required/>
