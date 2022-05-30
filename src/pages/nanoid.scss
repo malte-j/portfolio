@@ -1,0 +1,64 @@
+.n__page {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.n__num {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.n__numbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid black;
+  border-radius: 1337px;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  user-select: none;
+
+  &:hover {
+    background: rgb(233, 233, 233);
+  }
+}
+
+.n__numinput {
+  border: none;
+  text-align: center;
+  font-family: var(--monospace), monospace;
+  font-size: 2rem;
+  width: 3ch;
+  -moz-appearance: textfield;
+  
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.n__numwrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  padding: 0 1rem;
+  overflow-x: auto;
+  
+  .n__selectable {
+    margin: .4rem;
+    -webkit-user-select: all;
+    user-select: all;
+    display: block;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+}
