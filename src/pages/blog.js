@@ -4,7 +4,7 @@ import Page from "../components/Page";
 import "prismjs/themes/prism.css";
 import * as style from "../styles/blog.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import ExternalLink from "../icons/ExternalLink";
+import ExternalLinkIcon from "../icons/ExternalLink";
 
 import { graphql, Link } from "gatsby";
 
@@ -32,15 +32,28 @@ export default function Blog({ data }) {
           );
 
           if (externalLink) {
-            return [
-              postDate,
-              <a key={n} href={externalLink}>
-                <h2>
-                  <ExternalLink className={style.extLinkIcon} />
-                  {title}
-                </h2>
-              </a>,
-            ];
+            if (externalLink.startsWith("/")) {
+              return [
+                postDate,
+                <Link key={n} to={externalLink}>
+                  <h2>
+                    <ExternalLinkIcon className={style.extLinkIcon} />
+                    {title}
+                  </h2>
+                </Link>,
+              ];
+            } else {
+              return [
+                postDate,
+                <a key={n} href={externalLink}>
+                  <h2>
+                    <ExternalLinkIcon className={style.extLinkIcon} />
+                    {title}
+                  </h2>
+                </a>,
+              ];
+
+            }
           } else if (thumbnail) {
             return [
               postDate,
@@ -65,7 +78,7 @@ export default function Blog({ data }) {
       </main>
     </Page>
   );
-};
+}
 
 export const pageQuery = graphql`
   query getBlogposts {
