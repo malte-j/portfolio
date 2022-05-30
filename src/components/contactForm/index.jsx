@@ -1,27 +1,30 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import * as style from "./style.module.scss";
+import { nanoid, customAlphabet } from "nanoid";
 
 export default () => {
-  let formRef = useRef(null)
-  
+  let formRef = useRef(null);
+
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [message, setMessage] = useState("");
+  let checkText = useMemo(() => customAlphabet("abcdefghijklmnopqrstuvwxyz", 5)(), []);
+  let [checkTextInput, setCheckTextInput] = useState("");
 
   let [submitted, setSubmitted] = useState(false);
 
   /**
    * Send to cf worker
-   * @param {React.FormEvent<HTMLFormElement>} e 
+   * @param {React.FormEvent<HTMLFormElement>} e
    */
   function handleSubmit(e) {
     e.preventDefault();
-    if(!formRef.current) return;
+    if (!formRef.current) return;
 
     fetch("/contact", {
-      method:'post',
-      body: new FormData(formRef.current)
-    })
+      method: "post",
+      body: new FormData(formRef.current),
+    });
     setSubmitted(true);
     console.log(e);
   }
@@ -37,7 +40,7 @@ export default () => {
       >
         <div data-visible={submitted} className={style.submittedWrapper}>
           <div>
-            <img src="/thankyou.webp" alt="Danke!"/>
+            <img src="/thankyou.webp" alt="Danke!" />
             <p>Danke! Ich schreibe dir so schnell ich kann :&#41;</p>
           </div>
         </div>
@@ -82,6 +85,33 @@ export default () => {
             Nachricht
           </label>
         </div>
+
+        <div className={style.captchaWrapper}>
+          <div>{checkText}</div>
+          <div className={style.inputWrapper}>
+            <input
+              type="text"
+              name="checkText"
+              id="form_checkText"
+              value={checkTextInput}
+              onChange={(e) => {
+                if(e.target.value != checkText) {
+                  e.nativeEvent.target.setCustomValidity("Eingabe muss mit dem Text links übereinstimmen")
+                  e.nativeEvent.target.reportValidity()
+                } else {
+                  e.nativeEvent.target.setCustomValidity("")
+
+                }
+                setCheckTextInput(e.target.value)}
+              }
+              required
+            />
+            <label htmlFor="form_checkText" data-filled={checkTextInput.length > 0}>
+              Was steht hier links?
+            </label>
+          </div>
+        </div>
+
         <div className={style.inputWrapper}>
           <button type="submit">Abschicken</button>
         </div>

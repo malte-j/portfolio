@@ -71,6 +71,17 @@
 
 }
 
+.captchaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0 2.5rem 0;
+  
+  .input-wrapper {
+    flex: 1 1 0;
+  }
+}
+
 .submittedWrapper {
   display: flex;
   position: absolute;
