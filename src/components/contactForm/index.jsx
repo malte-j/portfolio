@@ -10,7 +10,6 @@ export default () => {
   let [message, setMessage] = useState("");
   let checkText = useMemo(() => customAlphabet("abcdefghijklmnopqrstuvwxyz", 5)(), []);
   let [checkTextInput, setCheckTextInput] = useState("");
-
   let [submitted, setSubmitted] = useState(false);
 
   /**
@@ -97,7 +96,7 @@ export default () => {
               onChange={(e) => {
                 if(e.target.value != checkText) {
                   e.nativeEvent.target.setCustomValidity("Eingabe muss mit dem Text links übereinstimmen")
-                  e.nativeEvent.target.reportValidity()
+                  // e.nativeEvent.target.reportValidity()
                 } else {
                   e.nativeEvent.target.setCustomValidity("")
 

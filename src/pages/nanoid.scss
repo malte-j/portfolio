@@ -25,6 +25,7 @@
   height: 35px;
   width: 35px;
   user-select: none;
+  background: #fff;
 
   &:hover {
     background: rgb(233, 233, 233);
@@ -38,6 +39,9 @@
   font-size: 2rem;
   width: 3ch;
   -moz-appearance: textfield;
+  color: var(--colText);
+  background: none;
+  border: none;
   
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

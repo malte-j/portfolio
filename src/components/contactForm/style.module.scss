@@ -34,6 +34,7 @@
   input:focus + label, textarea:focus + label, [data-filled="true"] {
     transform: translate(-1rem, -2.5rem);
     color: #0f0f0f;
+
     [data-theme="dark"] & {
       color: var(--colText);
     }
@@ -88,7 +89,8 @@
   width: 100%;
   height: calc(100% + 20px);
   top: -20px;
-  background-color: white;
+  background-color: var(--colBackground);
+  color: var(--colText);
   align-items: center;
   justify-content: center;
   z-index: 100;
@@ -115,7 +117,7 @@
 }
 
 .red {
-  border:2px solid red!important;
+  border: 2px solid red!important;
 }
 
 .showlength {
