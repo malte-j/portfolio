@@ -1,5 +1,7 @@
 .wrapper {
-  width: min(40vh, 100vw);
+  
+  width: 100%;
+  max-width: min(40vh, 100vw);
   aspect-ratio: 3648/5472;
   // height: 60vh;
 

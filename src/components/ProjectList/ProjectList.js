@@ -24,6 +24,7 @@ export default function ProjectList(data) {
           </h3>
           <p className="project__header__date">{project.frontmatter.date}</p>
         </div>
+
         <p className="project__about">{project.excerpt}</p>
         <ul className="project__stack">
           {project.frontmatter.stack.map((tech) => (

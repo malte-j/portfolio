@@ -16,8 +16,7 @@ stack:
   - AWS
   - SASS
   - CloudFlare
-  - Figma
 featured: true
 ---
 
-Das WordPress-Theme für Spacifik, entwickelt von Grund auf, für beste Performance trotz WordPress. Mit Einbettung von Lottie-Animationen, gebundelt mit webpack, Docker für lokale Entwicklung, einem Kontaktformular mit AWS Lambda, CI/CD mit GitHub Actions und viel mehr. Mehr Informationen im GitHub Repository.
+Das WordPress-Theme für Spacifik, entwickelt von Grund auf, für beste Performance trotz WordPress. Mit Einbettung von Lottie-Animationen, gebundelt mit webpack, Docker für lokale Entwicklung, einem Kontaktformular mit AWS Lambda, CI/CD mit GitHub Actions und viel mehr.

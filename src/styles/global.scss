@@ -18,24 +18,13 @@
   font-size: 14px;
 }
 
-// @media screen and (min-width: 900px) {
-//   :root {
-//     font-size: 16px;
-//   }
-// }
-
-// @media screen and (min-width: 1200px) {
-//   :root {
-//     font-size: 17px;
-//   }
-// }
-
 body {
   font-size: 1rem;
   margin: 0;
   font-family: "Space Mono", monospace;
   background-color: var(--colBackground);
   color: var(--colText);
+  position: relative;
 
   --monospace: "Space Mono", monospace;
   --sansSerif: "Inter", sans-serif;
@@ -52,13 +41,13 @@ body {
     --colTextTertiary: #b4b4b4;
   }
 
-  &::before {
+  &::before, &::after {
     content: "";
     position: absolute;
     pointer-events: none;
     top: 0;
     width: 100%;
-    height: 60%;
+    height: 60vh;
     background: radial-gradient(
         36.48% 48.7% at 50% 50.06%,
         rgba(232, 97, 0, 0.15) 0%,
@@ -75,7 +64,16 @@ body {
         rgba(253, 152, 0, 0) 100%
       );
   }
+
+  &::after {
+    bottom: 0;
+    top: unset;
+    transform: rotate(180deg);
+    z-index: -1;
+  }
 }
+
+
 
 a {
   color: inherit;
@@ -84,7 +82,7 @@ a {
 
   &:hover {
     // font-weight: bold;
-    color: #386d7d;
+    color: #2e1a53;
     border-color: #386d7d;
   }
 }

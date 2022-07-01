@@ -3,7 +3,7 @@ title: Aupairadise
 path: "/projects/aupairadise"
 date: "2019-07-10"
 thumbnail: "./Aupairadise.jpg"
-links: "[['Zur Website', 'https://aupairadise.de'], ['GitHub', 'https://github.com/SkyGuardian42/Aupairadise']]"
+links: "[['Website', 'https://aupairadise.de'], ['GitHub', 'https://github.com/SkyGuardian42/Aupairadise']]"
 stack:
   - JavaScript
   - React

@@ -1,11 +1,12 @@
 .projects {
-  max-width: 1125px;
+  max-width: 925px;
   padding: 1rem;
   margin: 0 auto;
   overflow: hidden;
 
   .project {
     display: flex;
+    gap: 3rem;
 
     &:not(:last-child) {
       margin-bottom: 100px;
@@ -13,8 +14,7 @@
 
     &__thumbnail {
       overflow: hidden;
-      margin-right: 3vw;
-      flex: 1;
+      flex: 1.6;
     }
 
     &__details {
@@ -22,7 +22,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      flex: 1;
+      flex: 1 0 0;
       gap: 1rem;
     }
 
@@ -30,6 +30,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      align-items: baseline;
 
       &__date {
         margin: 0;
@@ -44,9 +45,13 @@
     }
 
     &__about {
-      font-family: var(--sansSerif), sans-serif;
+      font-family: var(--sansSerif);
       line-height: 1.4;
       margin: 0;
+
+      @media (min-width: 980px) {
+        font-size: 1rem;
+      }
     }
 
     &__stack {
@@ -57,7 +62,9 @@
 
       li {
         display: inline;
+        font-family: var(--sansSerif);
         font-style: italic;
+        color: var(--colTextTertiary);
 
         &:not(:last-child)::after {
           content: ", ";
@@ -70,26 +77,35 @@
       justify-content: space-between;
       margin: 0;
       padding: 0;
+      gap: 12px;
+      font-family: var(--sansSerif);
 
       li {
-        padding: 0.2rem 0.8rem;
-        border: 1px solid var(--colText);
-        border-radius: 1000px;
         list-style-type: none;
-        word-wrap: none;
+        display: block;
 
         a {
+          color: var(--colTextTertiary);
+
+          word-wrap: none;
+          border-radius: 1000px;
+          display: block;
           border: none;
+          text-align: center;
+          padding: 2px 8px;
+          border: 1px solid var(--colText);
+          // font-size: 0.9rem;
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 690px) {
   .projects {
     .project {
       flex-direction: column;
+      gap: 1rem;
 
       &__thumbnail {
         margin: 0;
@@ -99,9 +115,5 @@
         margin: 0;
       }
     }
-  }
-
-  .project__header {
-    margin-top: 1.4rem;
   }
 }
