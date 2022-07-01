@@ -1,0 +1,16 @@
+.wrapper {
+  width: min(40vh, 100vw);
+  aspect-ratio: 3648/5472;
+  // height: 60vh;
+
+  canvas {
+    display: block;
+    mask-image: url(/mask.svg);
+    -webkit-mask-image: url(/mask.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: 50% 50%;
+  }
+}
