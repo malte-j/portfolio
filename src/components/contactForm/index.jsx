@@ -1,8 +1,8 @@
 import React, { useState, useRef, useMemo } from "react";
 import * as style from "./style.module.scss";
-import { nanoid, customAlphabet } from "nanoid";
+import { customAlphabet } from "nanoid";
 
-export default () => {
+export default function ContactForm() {
   let formRef = useRef(null);
 
   let [name, setName] = useState("");
