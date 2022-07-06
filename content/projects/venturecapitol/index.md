@@ -17,4 +17,4 @@ stack:
 featured: true
 ---
 
-Das WordPress-Theme für Spacifik, entwickelt von Grund auf, für beste Performance trotz WordPress. Mit Einbettung von Lottie-Animationen, gebundelt mit webpack, Docker für lokale Entwicklung, einem Kontaktformular mit AWS Lambda, CI/CD mit GitHub Actions und viel mehr.
+Ein Unternehmen in Deutschland zu gründen kann schnell überfordern. Um mehr Übersichtlichkeit in den Prozess zu bringen, habe ich mit Kommilitonen Venture Capitol gegründet. Mit einer von mir entwickelten serverlosen Infrastruktur wurden wir einer der Gewinner im Google Cloud Hackathon 2022! Wir suchen gerade nach Möglichkeiten, die Weiterentwicklung zu finanzieren.
