@@ -9,7 +9,7 @@ nav {
     background: var(--colBackground);
   }
 
-  transition: background-color .5s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
   .inner {
     height: 100%;
@@ -26,6 +26,31 @@ nav {
       align-items: center;
       border-bottom: none;
     }
+
+    span,
+    img,
+    a {
+      user-select: none;
+    }
+  }
+}
+
+.nav__icon {
+  cursor: pointer;
+  background: none;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: auto;
+    height: 1rem;
   }
 }
 

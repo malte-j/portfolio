@@ -4,6 +4,10 @@
   margin: 0 auto;
   overflow: hidden;
 
+  @media (max-width: 500px) {
+    padding: 1rem;
+  }
+
   .project {
     display: flex;
     align-items: flex-start;
@@ -88,9 +92,10 @@
 
         a {
           color: var(--colTextSecondary);
-
+          display: flex;
+          align-items: center;
+          gap: 6px;
           border-radius: 1000px;
-          display: block;
           border: none;
           text-align: center;
           padding: 2px 8px;

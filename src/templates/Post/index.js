@@ -49,7 +49,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 150, truncate: false)
       frontmatter {
         title
-        date(formatString: "MMMM YYYY")
+        date(formatString: "MMMM YYYY", locale: "de")
         path
         thumbnail {
           publicURL

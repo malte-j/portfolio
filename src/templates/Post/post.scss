@@ -22,13 +22,14 @@
       .title {
         transform: translateY(-50%);
         padding:  2.6rem 5rem 0 5rem;
-        background-color: rgba(255, 255, 255, 0.233);
+        background-color: #fffcfb3b;
         backdrop-filter: blur(14px);
         transition: transform .2s ease-in-out;
         will-change: transform;
+        border-radius: 5px;
 
         [data-theme="dark"] & {
-          background-color: rgba(33, 33, 33, 0.281);
+          background-color: #12121448;
         }
       }
 

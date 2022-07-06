@@ -3,7 +3,7 @@ title: Piko
 path: "/projects/piko"
 date: "2019-09-01"
 thumbnail: "./Piko.jpg"
-links: "[['Website', 'https://piko.malts.me/'], [['GitHub'], ['https://github.com/SkyGuardian42/Piko']]]"
+links: "[['Website', 'https://piko.malts.me/'], ['GitHub', ['https://github.com/SkyGuardian42/Piko']]]"
 stack:
   - JavaScript
   - Service Workers

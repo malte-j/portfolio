@@ -124,14 +124,19 @@ export default class Sketch {
   #stopped = false;
 
   /**
-   * @type HtmlDivElement
+   * @type HTMLDivElement
    */
   container;
 
   /**
-   *  @type: HTMLCanvasElement
+   * @type HTMLCanvasElement
    */
   canvas;
+
+  /**
+   * @type WebGLRenderingContext
+   */
+  gl;
 
   constructor(wrapperElement) {
     this.container = wrapperElement;
@@ -159,7 +164,12 @@ export default class Sketch {
 
     this.createScene();
     this.addTexture();
-    this.mouseMove();
+
+    if (window.ontouchstart !== undefined) {
+      this.initScroll();
+    } else {
+      this.initMouseMove();
+    }
   }
 
   addShader(source, type) {
@@ -287,42 +297,32 @@ export default class Sketch {
     this.render();
   }
 
-  // gyro() {
-  //   let that = this;
-  //   this.maxTilt = 15;
+  handleScroll() {
+    const scrollPercent = clamp(window.scrollY / (this.windowHeight / 2), 0, 1);
+    this.mouseTargetY = scrollPercent * 3 - 1;
+  }
 
-  //   const rotationCoef = 0.15;
+  initScroll() {
+    this.handleScroll();
+    document.addEventListener("scroll", this.handleScroll.bind(this));
+  }
 
-  //   gn.init({ gravityNormalized: true }).then(function() {
-  //     gn.start(function(data) {
+  handleMouseMove(e) {
+    let halfX = this.windowWidth / 2;
+    let halfY = this.windowHeight / 2;
+    this.mouseTargetX = (halfX - e.clientX) / halfX;
+    this.mouseTargetY = (halfY - e.clientY) / halfY;
+  }
 
-  //       let y = data.do.gamma;
-  //       let x = data.do.beta;
-
-  //       that.mouseTargetY = clamp(x,-that.maxTilt, that.maxTilt)/that.maxTilt;
-  //       that.mouseTargetX = -clamp(y,-that.maxTilt, that.maxTilt)/that.maxTilt;
-
-  //     });
-  //   }).catch(function(e) {
-  //     console.log('not supported');
-
-  //   });
-
-  // }
-
-  mouseMove() {
-    let that = this;
-    document.addEventListener("mousemove", function (e) {
-      let halfX = that.windowWidth / 2;
-      let halfY = that.windowHeight / 2;
-
-      that.mouseTargetX = (halfX - e.clientX) / halfX;
-      that.mouseTargetY = (halfY - e.clientY) / halfY;
-    });
+  initMouseMove() {
+    document.addEventListener("mousemove", this.handleMouseMove.bind(this));
   }
 
   destory() {
     window.removeEventListener("resize", this.resizeHandler.bind(this));
+    document.removeEventListener("scroll", this.handleScroll.bind(this));
+    document.removeEventListener("mousemove", this.handleMouseMove.bind(this));
+
     this.#stopped = false;
     this.container.innerHTML = "";
   }
@@ -331,9 +331,6 @@ export default class Sketch {
     let now = new Date().getTime();
     let currentTime = (now - this.startTime) / 1000;
     this.uTime.set(currentTime);
-    // inertia
-    // this.mouseX += (this.mouseTargetX - this.mouseX)*0.05;
-    // this.mouseY += (this.mouseTargetY - this.mouseY)*0.05;
 
     this.mouseX = this.mouseTargetX;
     this.mouseY = this.mouseTargetY;
@@ -400,14 +397,6 @@ Rect.prototype.render = function (gl) {
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 };
 
-// function clamp(number, lower, upper) {
-//   if (number === number) {
-//     if (upper !== undefined) {
-//       number = number <= upper ? number : upper;
-//     }
-//     if (lower !== undefined) {
-//       number = number >= lower ? number : lower;
-//     }
-//   }
-//   return number;
-// }
+function clamp(number, min, max) {
+  return Math.max(min, Math.min(number, max));
+}

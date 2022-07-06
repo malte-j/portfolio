@@ -1,0 +1,20 @@
+.footer {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+  p {
+    margin: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    text-decoration: underline;
+  }
+}
