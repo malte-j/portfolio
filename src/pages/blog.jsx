@@ -52,7 +52,6 @@ export default function Blog({ data }) {
                   </h2>
                 </a>,
               ];
-
             }
           } else if (thumbnail) {
             return [
@@ -61,6 +60,7 @@ export default function Blog({ data }) {
                 <GatsbyImage
                   image={getImage(thumbnail)}
                   alt={"preview image"}
+                  className={style.thumbnail}
                 />
 
                 <h2>{title}</h2>
@@ -97,7 +97,7 @@ export const pageQuery = graphql`
             date(formatString: "DD.MM.YYYY", locale: "de")
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width: 530)
+                gatsbyImageData(width: 530, quality: 90)
               }
             }
             externalLink

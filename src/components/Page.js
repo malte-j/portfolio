@@ -1,7 +1,7 @@
 import React from "react";
 import Seo from "./SEO";
 import Nav from "./Navigation/Navigation";
-import Footer from "./footer";
+import Footer from "./Footer";
 
 export default function Page({ children, className, seo }) {
   if (className) {

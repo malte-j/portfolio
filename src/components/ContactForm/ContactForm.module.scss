@@ -12,13 +12,22 @@
     }
   }
 
-  input, textarea {
-    border: 1px solid #0f0f0f;
+  body[data-theme="dark"] & {
+    input,
+    textarea {
+      background: none;
+    }
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--colTextTertiary);
+    color: var(--colText);
     font-size: 1rem;
     width: 100%;
-    padding: .8rem;
+    padding: 0.8rem;
     font-family: inherit;
-    // background: #fff;
+    border-radius: 5px;
   }
 
   label {
@@ -28,17 +37,15 @@
     left: 1rem;
     user-select: none;
     pointer-events: none;
-    color: #3a3a3a;
-    transition: transform .2s ease;
+    color: var(--colTextTertiary);
+    transition: transform 0.2s ease;
   }
-  
-  input:focus + label, textarea:focus + label, [data-filled="true"] {
-    transform: translate(-1rem, -2.5rem);
-    color: #0f0f0f;
 
-    [data-theme="dark"] & {
-      color: var(--colText);
-    }
+  input:focus + label,
+  textarea:focus + label,
+  [data-filled="true"] {
+    transform: translate(-1rem, -2.5rem);
+    color: var(--colTextSecondary);
   }
 
   textarea {
@@ -47,13 +54,15 @@
 
   button {
     border: 1px solid var(--colText);
+    border-radius: 5px;
     background: none;
-    padding: .8rem;
+    padding: 0.8rem;
     font-family: inherit;
     color: var(--colText);
     cursor: pointer;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: var(--colBackground);
       background-color: var(--colText);
       border-color: var(--colText);
@@ -61,8 +70,8 @@
 
     &:active {
       color: white;
-      background-color: #386D7D;
-      border-color: #386D7D;
+      background-color: #386d7d;
+      border-color: #386d7d;
     }
   }
 
@@ -70,7 +79,10 @@
     position: relative;
   }
 
-
+  .submitWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .captchaWrapper {
@@ -78,7 +90,7 @@
   align-items: center;
   gap: 2rem;
   margin: 1rem 0 2.5rem 0;
-  
+
   .input-wrapper {
     flex: 1 1 0;
   }
@@ -96,7 +108,7 @@
   justify-content: center;
   z-index: 100;
   opacity: 0;
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
   pointer-events: none;
 
   div {
@@ -105,7 +117,7 @@
     align-items: center;
     gap: 2rem;
   }
-  
+
   img {
     width: 100%;
     max-width: 300px;
@@ -115,10 +127,6 @@
     opacity: 1;
     pointer-events: initial;
   }
-}
-
-.red {
-  border: 2px solid red!important;
 }
 
 .showlength {

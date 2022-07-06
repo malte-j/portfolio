@@ -23,15 +23,15 @@ const fragment = `
   }
 
   //
-// Description : GLSL 2D simplex noise function
-//      Author : Ian McEwan, Ashima Arts
-//  Maintainer : ijm
-//     Lastmod : 20110822 (ijm)
-//     License :
-//  Copyright (C) 2011 Ashima Arts. All rights reserved.
-//  Distributed under the MIT License. See LICENSE file.
-//  https://github.com/ashima/webgl-noise
-//
+  // Description : GLSL 2D simplex noise function
+  //      Author : Ian McEwan, Ashima Arts
+  //  Maintainer : ijm
+  //     Lastmod : 20110822 (ijm)
+  //     License :
+  //  Copyright (C) 2011 Ashima Arts. All rights reserved.
+  //  Distributed under the MIT License. See LICENSE file.
+  //  https://github.com/ashima/webgl-noise
+  //
   float snoise(vec2 v) {
 
     // Precompute values for skewed triangular grid
@@ -89,12 +89,7 @@ const fragment = `
     g.x  = a0.x  * x0.x  + h.x  * x0.y;
     g.yz = a0.yz * vec2(x1.x,x2.x) + h.yz * vec2(x1.y,x2.y);
     return 130.0 * dot(m, g);
-  }
-
-  float random2d(vec2 coord) {
-    return fract(sin(dot(coord.xy ,vec2(12.9898,78.233))) * 43758.5453);
-  }
-  
+  }  
 
   void main() {
     // uvs and textures
@@ -114,8 +109,6 @@ const fragment = `
     finImage.b = finImage.b * noise;
 
     gl_FragColor = finImage;
-
-
   }
 `;
 
@@ -245,7 +238,7 @@ export default class Sketch {
 
   addTexture() {
     let that = this;
-    let gl = that.gl;
+    // let gl = that.gl;
     loadImages(this.imageURLs, that.start.bind(this));
   }
 
@@ -407,14 +400,14 @@ Rect.prototype.render = function (gl) {
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 };
 
-function clamp(number, lower, upper) {
-  if (number === number) {
-    if (upper !== undefined) {
-      number = number <= upper ? number : upper;
-    }
-    if (lower !== undefined) {
-      number = number >= lower ? number : lower;
-    }
-  }
-  return number;
-}
+// function clamp(number, lower, upper) {
+//   if (number === number) {
+//     if (upper !== undefined) {
+//       number = number <= upper ? number : upper;
+//     }
+//     if (lower !== undefined) {
+//       number = number >= lower ? number : lower;
+//     }
+//   }
+//   return number;
+// }

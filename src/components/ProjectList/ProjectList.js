@@ -12,6 +12,9 @@ export default function ProjectList(data) {
     >
       <div className="project__thumbnail">
         <GatsbyImage
+          style={{
+            width: "100%",
+          }}
           image={getImage(project.frontmatter.thumbnail)}
           alt="alt"
         />

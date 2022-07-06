@@ -4,9 +4,9 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import Window from "../components/window";
 import Nav from "../components/Navigation/Navigation";
-import Contact from "../components/contactForm";
+import Contact from "../components/ContactForm";
 import Seo from "../components/SEO";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import ProjectList from "../components/ProjectList/ProjectList";
 import Fake3DImage from "../components/Fake3DImage/Fake3DImage";
 
@@ -36,7 +36,7 @@ export default function Index({ data }) {
       <section className="projects" id="projects">
         <ProjectList projects={projects.featured} />
 
-        <h2>Weitere Projekte:</h2>
+        {/* <h2>Weitere Projekte:</h2> */}
 
         <ProjectList projects={projects.other} />
       </section>

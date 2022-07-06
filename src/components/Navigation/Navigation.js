@@ -1,23 +1,17 @@
-import React, { useState } from "react";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React from "react";
 import "./Navigation.scss";
 
 export default function Navigation() {
   const [hasScrolled, setHasScrolled] = React.useState(false);
 
-  useState(()=>{
-    const listener = window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        setHasScrolled(true);
-      } else {
-        setHasScrolled(false);
-      }
-    });
+  React.useEffect(() => {
+    const handleScroll = () => setHasScrolled(window.scrollY > 2);
 
-
-    return () => window.removeEventListener("scroll", listener);
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav data-has-scrolled={hasScrolled}>

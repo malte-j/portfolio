@@ -1,5 +1,5 @@
 import React, { useState, useRef, useMemo } from "react";
-import * as style from "./style.module.scss";
+import * as s from "./ContactForm.module.scss";
 import { customAlphabet } from "nanoid";
 
 export default function ContactForm() {
@@ -8,7 +8,10 @@ export default function ContactForm() {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [message, setMessage] = useState("");
-  let checkText = useMemo(() => customAlphabet("abcdefghijklmnopqrstuvwxyz", 5)(), []);
+  let checkText = useMemo(
+    () => customAlphabet("abcdefghijklmnopqrstuvwxyz", 5)(),
+    []
+  );
   let [checkTextInput, setCheckTextInput] = useState("");
   let [submitted, setSubmitted] = useState(false);
 
@@ -29,7 +32,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className={style.contact} id="contact">
+    <section className={s.contact} id="contact">
       <form
         name="contact"
         onSubmit={handleSubmit}
@@ -37,7 +40,7 @@ export default function ContactForm() {
         action="/contact"
         ref={formRef}
       >
-        <div data-visible={submitted} className={style.submittedWrapper}>
+        <div data-visible={submitted} className={s.submittedWrapper}>
           <div>
             <img src="/thankyou.webp" alt="Danke!" />
             <p>Danke! Ich schreibe dir so schnell ich kann :&#41;</p>
@@ -45,7 +48,7 @@ export default function ContactForm() {
         </div>
 
         <input type="hidden" name="form-name" value="contact" />
-        <div className={style.inputWrapper}>
+        <div className={s.inputWrapper}>
           <input
             type="text"
             name="name"
@@ -58,7 +61,7 @@ export default function ContactForm() {
             Name
           </label>
         </div>
-        <div className={style.inputWrapper}>
+        <div className={s.inputWrapper}>
           <input
             type="email"
             name="email"
@@ -71,7 +74,7 @@ export default function ContactForm() {
             Email-Adresse
           </label>
         </div>
-        <div className={style.inputWrapper}>
+        <div className={s.inputWrapper}>
           <textarea
             name="message"
             rows="6"
@@ -85,36 +88,40 @@ export default function ContactForm() {
           </label>
         </div>
 
-        <div className={style.captchaWrapper}>
+        <div className={s.captchaWrapper}>
           <div>{checkText}</div>
-          <div className={style.inputWrapper}>
+          <div className={s.inputWrapper}>
             <input
               type="text"
               name="checkText"
               id="form_checkText"
               value={checkTextInput}
               onChange={(e) => {
-                if(e.target.value != checkText) {
-                  e.nativeEvent.target.setCustomValidity("Eingabe muss mit dem Text links übereinstimmen")
+                if (e.target.value != checkText) {
+                  e.nativeEvent.target.setCustomValidity(
+                    "Eingabe muss mit dem Text links übereinstimmen"
+                  );
                   // e.nativeEvent.target.reportValidity()
                 } else {
-                  e.nativeEvent.target.setCustomValidity("")
-
+                  e.nativeEvent.target.setCustomValidity("");
                 }
-                setCheckTextInput(e.target.value)}
-              }
+                setCheckTextInput(e.target.value);
+              }}
               required
             />
-            <label htmlFor="form_checkText" data-filled={checkTextInput.length > 0}>
-              Was steht hier links?
+            <label
+              htmlFor="form_checkText"
+              data-filled={checkTextInput.length > 0}
+            >
+              &lt;- Was steht hier links?
             </label>
           </div>
         </div>
 
-        <div className={style.inputWrapper}>
+        <div className={`${s.inputWrapper} ${s.submitWrapper}`}>
           <button type="submit">Abschicken</button>
         </div>
       </form>
     </section>
   );
-};
+}

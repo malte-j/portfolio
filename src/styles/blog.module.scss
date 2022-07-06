@@ -23,6 +23,10 @@
   }
 }
 
+.thumbnail {
+  border-radius: 5px;
+}
+
 main.articles {
   color: var(--colText);
   display: grid;

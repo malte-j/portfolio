@@ -3,7 +3,7 @@ title: Spacifik
 path: "/projects/spacifik"
 date: "2020-11-01"
 thumbnail: "./Spacifik.jpg"
-links: "[['Zur Website', 'https://spacifik.de'], ['Figma Datei', 'https://www.figma.com/file/RH0q0QBNDzyjXkFiVPdOfH/Seite?node-id=43%3A5'],['GitHub', 'https://github.com/SkyGuardian42/argo']]"
+links: "[['Website', 'https://spacifik.de'], ['Figma', 'https://www.figma.com/file/RH0q0QBNDzyjXkFiVPdOfH/Seite?node-id=43%3A5'],['GitHub', 'https://github.com/SkyGuardian42/argo']]"
 stack:
   - WordPress
   - PHP

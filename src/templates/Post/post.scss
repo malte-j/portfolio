@@ -13,8 +13,10 @@
       margin: 4rem auto 0 auto;
 
       .thumbnail {
-        max-width: 60rem;
-        width: 100%;
+        // max-width: 60rem;
+        // width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
       } 
 
       .title {
@@ -24,7 +26,6 @@
         backdrop-filter: blur(14px);
         transition: transform .2s ease-in-out;
         will-change: transform;
-        // border-radius: 1rem;
 
         [data-theme="dark"] & {
           background-color: rgba(33, 33, 33, 0.281);
