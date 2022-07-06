@@ -1,13 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
 import Page from "../../components/Page";
 import "./post.scss";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 export default function Template({ data }) {
-  const { mdx } = data; // data.markdownRemark holds your post data
+  const { mdx } = data;
   const { frontmatter, body, excerpt } = mdx;
   const thumbnailUrl = frontmatter?.thumbnail?.publicURL;
   const image = getImage(frontmatter.thumbnail);
