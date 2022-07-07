@@ -141,8 +141,6 @@ h2 {
 h3 {
   font-size: inherit;
   margin: 0;
-  // border-bottom: 1px solid var(--colText)
-  // text-decoration: underline;
 }
 
 h2.contact {
@@ -166,56 +164,11 @@ h2.contact {
   }
 }
 
-// .window {
-//   overflow: hidden;
-//   z-index: 2;
-//   position: relative;
-//   height: 44vh;
-//   width: 35vh;
-//   max-width: 90vw;
-
-//   &.loading > * {
-//     // transition: transform .1s linear;
-//     filter: blur(10px);
-//     // transition: none;
-//   }
-//   .top,
-//   .bot {
-//     position: absolute !important;
-//     height: 100%;
-//     width: 100%;
-//     left: 0;
-//     bottom: 0;
-//     will-change: transform;
-//   }
-
-//   .bot {
-//     transform: translateY(var(--tx)) scale(1.2);
-//   }
-
-//   .top {
-//     transform: translateY(var(--tx)) scale(1.2);
-//   }
-// }
-
 .about {
   margin: 5vh auto 30vh auto;
-
   max-width: 800px;
 }
 
 .gatsby-highlight {
   margin-bottom: 1.8rem;
 }
-
-// @media screen and (max-width: 600px) {
-//   .header {
-//     // flex-direction: column-reverse;
-//     overflow: hidden;
-
-//     .info p,
-//     .info a {
-//       margin: 2rem 0;
-//     }
-//   }
-// }
