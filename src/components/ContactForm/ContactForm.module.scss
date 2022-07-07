@@ -102,34 +102,22 @@
 
 .submittedWrapper {
   display: flex;
-  position: absolute;
-  width: 100%;
-  height: calc(100% + 20px);
-  top: -20px;
-  background-color: var(--colBackground);
   color: var(--colText);
   align-items: center;
   justify-content: center;
-  z-index: 100;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
   pointer-events: none;
 
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 12px;
   }
 
   img {
     width: 100%;
     max-width: 300px;
-  }
-
-  &[data-visible="true"] {
-    opacity: 1;
-    pointer-events: initial;
+    border-radius: 5px;
   }
 }
 
@@ -139,8 +127,4 @@
   margin: 0;
   right: 1rem;
   position: absolute;
-}
-
-.bot {
-  display: none;
 }
