@@ -18,14 +18,20 @@
   font-size: 14px;
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    --colBackground: #fffcfb;
-    --colText: #222328;
-    --colTextSecondary: #3a3d46;
-    --colTextTertiary: #575d64;
-    --colLink: #90013f;
-  }
+body {
+  --colBackground: #121214;
+  --colText: #eeeeee;
+  --colTextSecondary: #e9e9e9;
+  --colTextTertiary: #b4b4b4;
+  --colLink: #f3d3c1;
+}
+
+body {
+  --colBackground: #fffcfb;
+  --colText: #222328;
+  --colTextSecondary: #3a3d46;
+  --colTextTertiary: #575d64;
+  --colLink: #90013f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,6 +81,7 @@ body {
     top: 0;
     width: 100%;
     height: 60vh;
+
     background: radial-gradient(
         36.48% 48.7% at 50% 50.06%,
         rgba(232, 97, 0, 0.15) 0%,
