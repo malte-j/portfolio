@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function ExternalLink({ color, className }) {
+export default function ExternalLink({
+  color,
+  className,
+}: {
+  color?: string;
+  className?: string;
+}) {
   return (
     <svg
       width="14"

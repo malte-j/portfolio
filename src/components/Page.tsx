@@ -3,7 +3,15 @@ import Seo from "./SEO";
 import Nav from "./Navigation/Navigation";
 import Footer from "./Footer/Footer";
 
-export default function Page({ children, className, seo }) {
+export default function Page({
+  children,
+  className,
+  seo,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  seo?: any;
+}) {
   if (className) {
     className = className + " app";
   } else {

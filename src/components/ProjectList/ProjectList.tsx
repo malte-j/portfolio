@@ -18,7 +18,7 @@ export default function ProjectList(data) {
           style={{
             width: "100%",
           }}
-          image={getImage(project.frontmatter.thumbnail)}
+          image={getImage(project.frontmatter.thumbnail)!}
           alt="alt"
         />
       </div>

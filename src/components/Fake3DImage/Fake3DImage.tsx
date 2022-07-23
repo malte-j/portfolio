@@ -4,7 +4,7 @@ import Sketch from "./Shader";
 import * as s from "./Fake3DImage.module.scss";
 import { Helmet } from "react-helmet";
 
-export default function Fake3DImage({ image, depthMap }) {
+export default function Fake3DImage() {
   const wrapperRef = useRef(null);
   useEffect(() => {
     if (!wrapperRef.current) return;

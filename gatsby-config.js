@@ -9,6 +9,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-sass",
+    "gatsby-plugin-dts-css-modules",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
@@ -63,11 +64,11 @@ module.exports = {
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
           {
-            "resolve": `gatsby-remark-images`,
-            "options": {
-              "maxWidth": 720,
-              "quality": 80,
-              "withWebp": true,
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 720,
+              quality: 80,
+              withWebp: true,
             },
           },
           {

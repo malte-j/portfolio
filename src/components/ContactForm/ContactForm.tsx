@@ -71,7 +71,7 @@ export default function ContactForm() {
           <div className={s.inputWrapper}>
             <textarea
               name="message"
-              rows="6"
+              rows={6}
               id="form_message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -94,10 +94,12 @@ export default function ContactForm() {
                 autoComplete="off"
                 onChange={(e) => {
                   if (e.target.value !== checkText) {
+                    // @ts-ignore
                     e.nativeEvent.target.setCustomValidity(
                       "Eingabe muss mit dem Text links übereinstimmen"
                     );
                   } else {
+                    // @ts-ignore
                     e.nativeEvent.target.setCustomValidity("");
                   }
                   setCheckTextInput(e.target.value);

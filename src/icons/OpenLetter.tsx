@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function OpenLetterIcon({ color, className }) {
+export default function OpenLetterIcon({
+  color,
+  className,
+}: {
+  color?: string;
+  className?: string;
+}) {
   return (
     <svg
       width="15"

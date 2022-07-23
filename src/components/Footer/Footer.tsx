@@ -26,7 +26,6 @@ export default function Footer() {
         GitHub
       </a>
 
-
       <a href="mailto:hi@malts.me" rel="noreferrer" target="_blank">
         <OpenLetterIcon />
         hi@malts.me

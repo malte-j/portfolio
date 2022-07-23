@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function LinkedInIcon({ color, className }) {
+export default function LinkedInIcon({
+  color,
+  className,
+}: {
+  color?: string;
+  className?: string;
+}) {
   return (
     <svg
       width="15"

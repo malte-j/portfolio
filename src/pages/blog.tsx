@@ -58,7 +58,7 @@ export default function Blog({ data }) {
               postDate,
               <Link key={n} to={path}>
                 <GatsbyImage
-                  image={getImage(thumbnail)}
+                  image={getImage(thumbnail)!}
                   alt={"preview image"}
                   className={style.thumbnail}
                 />

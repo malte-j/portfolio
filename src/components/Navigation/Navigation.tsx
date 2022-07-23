@@ -8,13 +8,18 @@ export default function Navigation() {
   const [hasScrolled, setHasScrolled] = React.useState(false);
 
   const darkmodeMediaQuery = React.useRef(
-    window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null
+    typeof window !== "undefined" && window.matchMedia
+      ? window.matchMedia("(prefers-color-scheme: dark)")
+      : null
   );
 
   /**
    * @type ["light" | "dark"]
    */
   const [currentTheme, setCurrentTheme] = React.useState(() => {
+    if (typeof localStorage == "undefined" || typeof document == "undefined")
+      return "light";
+
     const theme =
       localStorage.getItem("theme") ??
       (darkmodeMediaQuery.current?.matches ? "dark" : "light");
@@ -32,20 +37,19 @@ export default function Navigation() {
 
   useEffect(() => {
     if (!darkmodeMediaQuery.current) return;
-
     darkmodeMediaQuery.current.addEventListener(
       "change",
       handleDarkmodeMediaQueryChange
     );
     return () =>
-      darkmodeMediaQuery.current.removeEventListener(
+      darkmodeMediaQuery.current?.removeEventListener(
         "change",
         handleDarkmodeMediaQueryChange
       );
   }, [darkmodeMediaQuery]);
 
   function toggleTheme() {
-    const updatedTheme = currentTheme == "dark" ? "light" : "dark";
+    const updatedTheme = currentTheme === "dark" ? "light" : "dark";
 
     setCurrentTheme(updatedTheme);
     document.body.dataset.theme = updatedTheme;

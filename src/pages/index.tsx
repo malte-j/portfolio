@@ -2,10 +2,10 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Nav from "../components/Navigation/Navigation";
 import Contact from "../components/ContactForm/ContactForm";
-import Seo from "../components/SEO";
 import Footer from "../components/Footer/Footer";
 import ProjectList from "../components/ProjectList/ProjectList";
 import Fake3DImage from "../components/Fake3DImage/Fake3DImage";
+import SEO from "../components/SEO";
 
 export default function Index({ data }) {
   const projects = {
@@ -15,7 +15,7 @@ export default function Index({ data }) {
 
   return (
     <div className="app">
-      <Seo />
+      <SEO />
       <section className="header" id="about">
         <Fake3DImage />
 
