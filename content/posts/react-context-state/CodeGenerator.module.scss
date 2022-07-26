@@ -1,0 +1,41 @@
+.button {
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: var(--colText);
+  border: 1px solid var(--colText);
+  background: #fff;
+
+  &:hover {
+    background: var(--colText);
+    color: #fff;
+  }
+
+  [data-theme="dark"] & {
+    color: var(--colText);
+    border: 1px solid var(--colText);
+    background: none;
+    &:hover {
+      background: var(--colText);
+      color: var(--colBackground);
+    }
+  }
+}
+
+.input {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+
+  input {
+    flex: 1 1 0;
+    font-size: 1.2rem;
+  }
+}
