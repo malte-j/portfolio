@@ -33,9 +33,11 @@
   display: flex;
   gap: 8px;
   width: 100%;
-
+  font-family: var(--monospace);
+  
   input {
     flex: 1 1 0;
     font-size: 1.2rem;
+    color: #DD4A68;
   }
 }
