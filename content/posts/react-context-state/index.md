@@ -2,6 +2,7 @@
 title: Using React Context for managing global State
 path: "/blog/react-context-state"
 date: "2022-07-26"
+thumbnail: "./thumbnail.jpg"
 ---
 
 import CodeGenerator from './CodeGenerator';
