@@ -53,3 +53,24 @@
        url('/fonts/inter-v11-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('/fonts/inter-v11-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+// PERFECTLY NINETIES
+
+/* space-mono-regular - latin */
+@font-face {
+  font-family: 'Perfectly Nineties';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/fonts/PerfectlyNineties-Regular.woff2') format('woff2'),
+       url('/fonts/PerfectlyNineties-Regular.woff') format('woff');
+}
+/* space-mono-italic - latin */
+@font-face {
+  font-family: 'Perfectly Nineties';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('/fonts/PerfectlyNineties-Italic.woff2') format('woff2'),
+       url('/fonts/PerfectlyNineties-Italic.woff') format('woff');
+}

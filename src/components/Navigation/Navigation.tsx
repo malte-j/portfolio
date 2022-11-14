@@ -67,14 +67,14 @@ export default function Navigation() {
     <nav data-has-scrolled={hasScrolled}>
       <div className="inner">
         <AnchorLink to="/#about">
-          <span>Über mich</span>
+          <span>about</span>
         </AnchorLink>
         <AnchorLink to="/#projects">
-          <span>Projekte</span>
+          <span>projects</span>
         </AnchorLink>
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog">blog</Link>
         <AnchorLink to="/#contact">
-          <span>Kontakt</span>
+          <span>contact</span>
         </AnchorLink>
         <button onClick={toggleTheme} className="nav__icon">
           <img

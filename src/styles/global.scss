@@ -55,6 +55,7 @@ body {
 
   --monospace: "Space Mono", monospace;
   --sansSerif: "Inter", sans-serif;
+  --serif: "Perfectly Nineties", serif;
 
   // if dark mode
   &[data-theme="light"] {
@@ -154,13 +155,27 @@ h2.contact {
   position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  max-width: 900px;
+  margin: 0 auto;
+
+  .info {
+    font-family: var(--serif);
+  }
 
   h1,
   a {
-    font-size: 1rem;
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--colTextSecondary);
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
   }
 }
 

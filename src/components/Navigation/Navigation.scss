@@ -1,24 +1,28 @@
 nav {
-  height: 3rem;
   z-index: 100;
   position: fixed;
   top: 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  // height: 2rem;
 
-  &[data-has-scrolled="true"] {
+  &[data-has-scrolled="true"] .inner {
     background: var(--colBackground);
   }
 
-  transition: background-color 0.2s ease-in-out;
-
   .inner {
-    height: 100%;
-    max-width: 700px;
+    // max-width: 700px;
     display: flex;
-    align-items: stretch;
-    justify-content: space-around;
+    // align-items: stretch;
+    justify-content: space-between;
+    gap: 42px;
     flex-wrap: wrap;
-    margin: 0 auto;
+    transition: background-color 0.2s ease-in-out;
+    padding: 12px 18px;
+    border-radius: 1000px;
+    font-family: var(--sansSerif);
 
     a {
       text-decoration: none;
@@ -31,6 +35,18 @@ nav {
     img,
     a {
       user-select: none;
+      // color: var(--colTextSecondary);
+      // &:hover {
+      //   color: var(--colLink);
+      // }
+      text-transform: capitalize;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    padding: 6px;
+    .inner {
+      width: 100%;
+      gap: 0;
     }
   }
 }
@@ -41,7 +57,7 @@ nav {
   border-radius: 0;
   border: none;
   outline: none;
-  padding: 0 10px;
+  padding: 0;
   margin: 0;
   height: 100%;
   display: flex;
@@ -56,14 +72,14 @@ nav {
 
 @supports (backdrop-filter: blur(10px)) {
   nav {
-    &[data-has-scrolled="true"] {
-      background: #fffcfb7c;
+    &[data-has-scrolled="true"] .inner {
+      background: #fffcfb96;
 
       [data-theme="dark"] & {
         background: hsla(0, 0%, 12%, 0.8);
       }
 
-      backdrop-filter: blur(12px) saturate(130%);
+      backdrop-filter: blur(8px) saturate(130%);
     }
   }
 }

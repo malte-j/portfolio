@@ -24,14 +24,14 @@
 }
 
 .thumbnail {
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 main.articles {
   color: var(--colText);
   display: grid;
   grid-template-columns: auto minmax(auto, 550px);
-	justify-content: center;
+  justify-content: center;
   grid-gap: 4rem 2rem;
   padding: 0 1rem;
   margin-bottom: 8rem;
@@ -51,13 +51,13 @@ main.articles {
   }
 
   .date {
-    color: var(--colTextSecondary);
+    color: var(--colTextTertiary);
   }
 
   .extLinkIcon {
-    height: .9rem;
+    height: 0.9rem;
     width: auto;
-    margin-right: .8rem;
+    margin-right: 0.8rem;
   }
 }
 

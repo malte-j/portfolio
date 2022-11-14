@@ -75,7 +75,7 @@ export const query = graphql`
       excerpt(pruneLength: 2000)
       frontmatter {
         title
-        date(formatString: "MMMM YYYY", locale: "de")
+        date(formatString: "MMMM YYYY", locale: "en")
         path
         stack
         links

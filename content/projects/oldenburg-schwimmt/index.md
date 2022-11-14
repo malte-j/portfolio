@@ -15,4 +15,4 @@ stack:
 featured: true
 ---
 
-Eine Webseite für das Olantis Huntebad, um Anmeldungen für ein Schwimmevent zu sammeln. Das Frontend generiert PHP mit Gulp, welches die Anmeldedaten dann in MySQL speichert.
+A website and registration system for a swimming event at the Olantis Huntebad Oldenburg. This was the first time I ever received money for something I programmed and designed. It was made in PHP and MySQL and hosted on a simple VPS.

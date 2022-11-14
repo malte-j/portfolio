@@ -15,8 +15,7 @@ export default function Blog({ data }) {
     <Page seo={{ title: "Blog | Malte Janßen" }}>
       <header className={style.header}>
         <p>
-          Hey, das hier ist der Kram, der es nicht auf die erste Seite geschafft
-          hat, mein
+          Hey, this is the stuff that didn't make it into the first page, my
         </p>
         <h1>blog.</h1>
       </header>

@@ -19,4 +19,4 @@ stack:
 featured: true
 ---
 
-Das WordPress-Theme für Spacifik, entwickelt von Grund auf, für beste Performance trotz WordPress. Mit Einbettung von Lottie-Animationen, gebundelt mit webpack, Docker für lokale Entwicklung, einem Kontaktformular mit AWS Lambda, CI/CD mit GitHub Actions und viel mehr.
+While working at Spacifik I relaunched the website with a fresh design and modern infrastructure stack for Wordpress and the new theme, built from the ground up to support CI/CD and local development. I also incorporated AWS Lambda to support some of the analytics and contact systems.

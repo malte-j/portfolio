@@ -17,4 +17,4 @@ stack:
 featured: true
 ---
 
-Ein Unternehmen in Deutschland zu gründen kann schnell überfordern. Um mehr Übersichtlichkeit in den Prozess zu bringen, habe ich mit Kommilitonen Venture Capitol gegründet. Mit einer von mir entwickelten serverlosen Infrastruktur wurden wir einer der Gewinner im Google Cloud Hackathon 2022! Wir suchen gerade nach Möglichkeiten, die Weiterentwicklung zu finanzieren.
+Founding a company in Germany is quite a cumbersome process. To make it easier for new founders to find their way through the German legal system, some friends and I founded Venture Capitol, a platform for managing the steps for founding your company. We were one of the winners of the Google Cloud Hackathon 2022, thanks to the automated serverless infrastructure I built. After failing to secure further investment, we open sourced the project and accept PRs to keep the content up-to-date.

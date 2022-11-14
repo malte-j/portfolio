@@ -18,4 +18,4 @@ stack:
 featured: true
 ---
 
-Eine SPA und dazugehörige Node-Anwendung auf einem RaspberryPi zur Steuerung des Türschlosses im Computerraum des Herbartgymnasiums, komplett mit Nutzerverwaltung und Eventlog.
+During my abitur I was active in the computer club of my highschool and created a Web App to allow students to open the door to our computer room using their smartphone. It featured access control, auditing and user management. It ran on a Raspberry Pi connected to the door, which had an electronic buzzer. 

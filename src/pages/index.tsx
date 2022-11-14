@@ -20,21 +20,23 @@ export default function Index({ data }) {
         <Fake3DImage />
 
         <div className="info">
-          <h1>Hi, ich bin Malte.</h1>
-          <h1>Webentwickler und Student.</h1>
+          <h1>
+            Hi, I'm <i>Malte</i>, <br />
+            Web Developer & Student
+          </h1>
         </div>
       </section>
 
       <Nav />
 
-      <h2>Ausgewählte Projekte:</h2>
+      {/* <h2>Selected Projects</h2> */}
 
       <section className="projects" id="projects">
         <ProjectList projects={projects.featured} />
         <ProjectList projects={projects.other} />
       </section>
 
-      <h2 className="contact">Kontakt:</h2>
+      <h2 className="contact">Contact</h2>
 
       <Contact />
 

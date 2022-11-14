@@ -65,7 +65,7 @@ export default function ContactForm() {
               required
             />
             <label htmlFor="form_email" data-filled={email.length > 0}>
-              Email-Adresse
+              Email
             </label>
           </div>
           <div className={s.inputWrapper}>
@@ -78,7 +78,7 @@ export default function ContactForm() {
               required
             ></textarea>
             <label htmlFor="form_message" data-filled={message.length > 0}>
-              Nachricht
+              Message
             </label>
           </div>
 
@@ -96,7 +96,7 @@ export default function ContactForm() {
                   if (e.target.value !== checkText) {
                     // @ts-ignore
                     e.nativeEvent.target.setCustomValidity(
-                      "Eingabe muss mit dem Text links übereinstimmen"
+                      "The entered text doesn't match the one to the left"
                     );
                   } else {
                     // @ts-ignore
@@ -110,20 +110,20 @@ export default function ContactForm() {
                 htmlFor="form_checkText"
                 data-filled={checkTextInput.length > 0}
               >
-                &lt;- Was steht hier links?
+                &lt;- Enter the text to the left
               </label>
             </div>
           </div>
 
           <div className={`${s.inputWrapper} ${s.submitWrapper}`}>
-            <button type="submit">Abschicken</button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       ) : (
         <div className={s.submittedWrapper}>
           <div>
             <img src="/thankyou.webp" alt="Danke!" />
-            <p>Danke! Ich schreibe dir so schnell ich kann :&#41;</p>
+            <p>Thanks! I'll get back to you as soon as I can! :&#41;</p>
           </div>
         </div>
       )}

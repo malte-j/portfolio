@@ -5,7 +5,8 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  
+  font-family: var(--sansSerif);
+
   p {
     margin: 0;
   }
@@ -15,6 +16,6 @@
     align-items: center;
     gap: 6px;
     border: none;
-    text-decoration: underline;
+    font-weight: 500;
   }
 }
