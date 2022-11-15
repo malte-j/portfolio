@@ -53,7 +53,7 @@ module.exports = {
         theme_color: `#000000`,
         lang: `de-DE`,
         display: `standalone`,
-        icon: `static/favicon.png`,
+        icon: `static/favicon.svg`,
         cache_busting_mode: "none",
       },
     },
