@@ -14,10 +14,10 @@ export default function Blog({ data }) {
   return (
     <Page seo={{ title: "Blog | Malte Janßen" }}>
       <header className={style.header}>
+        <h1>Blog</h1>
         <p>
-          Hey, this is the stuff that didn't make it into the first page, my
+          Things I wish someone else would have already written about.
         </p>
-        <h1>blog.</h1>
       </header>
 
       <main className={style.articles}>
@@ -61,7 +61,6 @@ export default function Blog({ data }) {
                   alt={"preview image"}
                   className={style.thumbnail}
                 />
-
                 <h2>{title}</h2>
               </Link>,
             ];
