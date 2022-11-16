@@ -15,62 +15,56 @@ export default function Blog({ data }) {
     <Page seo={{ title: "Blog | Malte Janßen" }}>
       <header className={style.header}>
         <h1>Blog</h1>
-        <p>
-          Things I wish someone else would have already written about.
-        </p>
+        <p>Things I wish someone else would have already written about.</p>
       </header>
 
       <main className={style.articles}>
         {posts.map(({ node: post }, n) => {
           const { title, date, externalLink, path, thumbnail } =
             post.frontmatter;
-          let postDate = (
-            <div key={"d" + n} className={style.date}>
-              {date}
-            </div>
-          );
+          let postDate = <div className={style.date}>{date}</div>;
 
           if (externalLink) {
             if (externalLink.startsWith("/")) {
-              return [
-                postDate,
-                <Link key={n} to={externalLink}>
+              return (
+                <Link key={n} to={externalLink} className={style.hasThumbnail}>
+                  {postDate}
                   <h2>
                     <ExternalLinkIcon className={style.extLinkIcon} />
                     {title}
                   </h2>
-                </Link>,
-              ];
+                </Link>
+              );
             } else {
-              return [
-                postDate,
-                <a key={n} href={externalLink}>
+              return (
+                <a key={n} href={externalLink} className={style.hasThumbnail}>
+                  {postDate}
                   <h2>
                     <ExternalLinkIcon className={style.extLinkIcon} />
                     {title}
                   </h2>
-                </a>,
-              ];
+                </a>
+              );
             }
           } else if (thumbnail) {
-            return [
-              postDate,
+            return (
               <Link key={n} to={path}>
                 <GatsbyImage
                   image={getImage(thumbnail)!}
                   alt={"preview image"}
                   className={style.thumbnail}
                 />
+                {postDate}
                 <h2>{title}</h2>
-              </Link>,
-            ];
+              </Link>
+            );
           } else {
-            return [
-              postDate,
+            return (
               <Link key={n} to={path}>
+                {postDate}
                 {title}
-              </Link>,
-            ];
+              </Link>
+            );
           }
         })}
       </main>
@@ -95,7 +89,7 @@ export const pageQuery = graphql`
             date(formatString: "DD.MM.YYYY", locale: "de")
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width: 530, quality: 90)
+                gatsbyImageData(width: 600, quality: 90)
               }
             }
             externalLink

@@ -15,11 +15,11 @@
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--colTextSecondary);
   }
 }
@@ -30,54 +30,51 @@
 
 main.articles {
   color: var(--colText);
-  display: grid;
-  grid-template-columns: auto minmax(auto, 550px);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  grid-gap: 4rem 2rem;
+  align-items: center;
+  gap: 120px;
   padding: 0 1rem;
   margin-bottom: 8rem;
 
-  h2 {
-    margin: 0;
-    font-size: 1rem;
-    text-align: left;
-    // font-family: var(--sansSerif);
+  > * {
+    max-width: 600px;
   }
 
-  a {
-    border: none;
-    // text-decoration: underline;
-    > * + * {
-      margin-top: 1rem;
+  > .hasThumbnail {
+    width: 100%;
+    padding: 24px;
+    border-radius: 8px;
+    background: radial-gradient(
+      99.85% 100% at 49.92% 100%,
+      rgba(250, 92, 0, 0.132) 0%,
+      rgba(255, 179, 215, 0.09) 100%
+    );
+
+    .date {
+      margin: 0;
     }
   }
 
+  h2,
+  a {
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: var(--serif);
+    border: none;
+    margin: 0;
+  }
+
   .date {
-    color: var(--colTextTertiary);
+    color: var(--colTextSecondary);
+    font-size: 1.1rem;
+    margin-top: 18px;
   }
 
   .extLinkIcon {
     height: 0.9rem;
     width: auto;
     margin-right: 0.8rem;
-  }
-}
-
-@media (max-width: 500px) {
-  main.articles {
-    grid-template-columns: 1fr;
-    grid-gap: 0;
-
-    h2 {
-      font-size: 1.1rem;
-    }
-
-    a {
-      margin-bottom: 4rem;
-    }
-
-    .date {
-      margin-bottom: 1rem;
-    }
   }
 }

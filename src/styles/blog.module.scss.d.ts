@@ -2,5 +2,6 @@
 export const header: string;
 export const thumbnail: string;
 export const articles: string;
+export const hasThumbnail: string;
 export const date: string;
 export const extLinkIcon: string;

@@ -17,4 +17,4 @@ stack:
 featured: true
 ---
 
-Founding a company in Germany is quite a cumbersome process. To make it easier for new founders to find their way through the German legal system, some friends and I founded Venture Capitol, a platform for managing the steps for founding your company. We were one of the winners of the Google Cloud Hackathon 2022, thanks to the automated serverless infrastructure I built. After failing to secure further investment, we open sourced the project and accept PRs to keep the content up-to-date.
+To make navigating the German legal systems easy for founders, some friends and I founded Venture Capitol, a platform for managing your founding process. We were winners of the Google Cloud Hackathon 2022, thanks to the automated serverless infrastructure I built. We open-sourced the project and accept PRs to keep the content up-to-date.

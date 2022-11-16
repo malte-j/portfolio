@@ -14,4 +14,4 @@ stack:
 featured: false
 ---
 
-The first iteration of my text editor, Piko. The special thing about it is that it stores the content compressed in the url, so you can bookmark your current work and access it just through that. It also works offline as it's a fully featured PWA.
+The first iteration of my text editor, Piko. The special thing about it is that it stores the current text in the url in a compressed form, so you can bookmark your the page you're working on and access it later using only that. Share the URL with everybody, without a byte of it getting stored on a server. It also works offline as it's a fully featured PWA.

@@ -18,4 +18,4 @@ stack:
 featured: true
 ---
 
-During my abitur I was active in the computer club of my highschool and created a Web App to allow students to open the door to our computer room using their smartphone. It featured access control, auditing and user management. It ran on a Raspberry Pi connected to the door, which had an electronic buzzer. 
+During my abitur I was active in the computer club of my highschool and created a web app to allow students to open the door to our computer room through an electric door opener using their smartphone. It ran on a Raspberry Pi and featured access control, auditing and user management.
