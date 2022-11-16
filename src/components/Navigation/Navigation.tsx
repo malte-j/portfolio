@@ -59,6 +59,7 @@ export default function Navigation() {
   React.useEffect(() => {
     const handleScroll = () => setHasScrolled(window.scrollY > 2);
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

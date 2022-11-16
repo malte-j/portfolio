@@ -47,6 +47,7 @@ module.exports = {
       options: {
         name: `Malte`,
         short_name: `Malte`,
+        description: "Website & Portfolio of Malte Janßen, Web Developer and Student.",
         orientation: `portrait`,
         start_url: `/`,
         background_color: `#000000`,
