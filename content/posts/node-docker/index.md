@@ -14,11 +14,24 @@ To combat this issue, I'm using a multi-stage build process, where the first sta
 
 I also wanted to minimize dependency install time. For this I'm using [pnpm](https://pnpm.io). It also features a command specifically for docker layer caching, `pnpm fetch`, which uses only the lockfile and ignores irrelevant changes to package.json. This pre-fetches the dependencies into the pnpm cache, so a later full install already has all the dependencies in the file system.
 
-Because PNPM creates symlinks for dependency files, the content of the `node_modules` folder needs to be packaged into the build output. This can be accomplished by using [esbuild](https://esbuild.github.io), bundling the output of `tsc`.
+Because PNPM creates symlinks for dependency files, we can't just copy the content of the `node_modules` to the second stage. The content files needs to be bundled into the build output. This can be accomplished by using [esbuild](https://esbuild.github.io), which can directly transpile TypeScript files and is way quicker at it than `tsx`. But esbuild skips type checking. We can run type checking in parallel using `tsc -noEmit` or skip it altogether if you are already using type checking during your development. For this you can use the following command:
 
 ```bash
-tsc && esbuild dist/index.js --bundle --platform=node --target=node16 --outfile=bundle.js
+tsc -noEmit && esbuild src/index.ts --bundle --platform=node --target=node16 --outfile=bundle.js
 ```
+
+The speed should be noticable, espacially in large projects. I included some benchmarks of the [piko.space](https://piko.space) backend codebase:
+
+<code style="color: #000">
+<pre># run "esbuild" using the above command, 20 run average</pre>
+<pre >Time (<font color="#4E9A06"><b>mean</b></font> ± <font color="#4E9A06">σ</font>):     <font color="#4E9A06"><b>363.7 ms</b></font> ± <font color="#4E9A06">  4.4 ms</font></pre>
+<br/>
+<pre ># run "tsc -noEmit", 20 runs average</pre>
+<pre>Time (<font color="#4E9A06"><b>mean</b></font> ± <font color="#4E9A06">σ</font>):     <font color="#4E9A06"><b> 2.065 s</b></font> ± <font color="#4E9A06"> 0.360 s</font></pre>
+<br/>
+<pre># run "tsc", 20 runs average</pre>
+<pre>Time (<font color="#4E9A06"><b>mean</b></font> ± <font color="#4E9A06">σ</font>):     <font color="#4E9A06"><b> 2.250 s</b></font> ± <font color="#4E9A06"> 0.407 s</font> </pre>
+</code>
 
 This example Dockerfile from my project assumes a monorepo setup, where multiple apps are in the `/apps/<app>` folder, and we are only packaging the backend app.
 
