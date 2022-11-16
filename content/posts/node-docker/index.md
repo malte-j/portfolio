@@ -74,7 +74,7 @@ The `tsconfig.json` configures the build to work with Node 16:
 }
 ```
 
-This results in a container using only **121 MB** in size, roughly 87% smaller than the recommended image. Using the distroless image as a base has some drawbacks. If your dependencies are using other programming languages, like python, etc., you have to install them yourself. Dependencies like [prisma](https://www.prisma.io/) which compile code on install need to be handled seperately, but you should probably optimize prisma anyway, as most binaries included won't be needed by your production app anyways, like the prisma file formatter.
+This results in a container using only **121 MB** in size, roughly 87% smaller than the recommended image. Using the distroless image as a base has some drawbacks. If your dependencies are using other programming languages, like python, etc., you have to install them yourself. Dependencies like [prisma](https://www.prisma.io/) which compile code on install need to be handled seperately. But you should probably optimize packaging prisma anyway, as most binaries bundled by it won't be needed by your production app anyways, like the prisma file formatter.
 
 All of this allows for faster deploys and drastically reduced build time. This makes publishing a new version in seconds, not minutes, possible, reducing cycle time and minimizing the gap between production and development. I can deploy a fix almost instantly, and get feedback on changes from real devices so quickly that it actually changed my development workflow. Deploying more often meant I could experiment with small changes and undo them without much friction, which makes the development process way more enjoyable, at least for me.
 
