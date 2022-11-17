@@ -6,6 +6,8 @@ import Footer from "../components/Footer/Footer";
 import ProjectList from "../components/ProjectList/ProjectList";
 import Fake3DImage from "../components/Fake3DImage/Fake3DImage";
 import SEO from "../components/SEO";
+import { Helmet } from "react-helmet";
+import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
 
 export default function Index({ data }) {
   const projects = {
@@ -16,8 +18,25 @@ export default function Index({ data }) {
   return (
     <div className="app">
       <SEO />
+      <Helmet>
+        <link
+          rel="preload"
+          href="/fonts/PerfectlyNineties-Regular.woff2"
+          as="font"
+          type="font/woff2"
+        />
+        <link
+          rel="preload"
+          href="/fonts/PerfectlyNineties-Italic.woff2"
+          as="font"
+          type="font/woff2"
+        />
+      </Helmet>
+
       <section className="header" id="about">
-        <Fake3DImage />
+        <ErrorBoundary>
+          <Fake3DImage />
+        </ErrorBoundary>
 
         <div className="info">
           <h1>
@@ -28,8 +47,6 @@ export default function Index({ data }) {
       </section>
 
       <Nav />
-
-      {/* <h2>Selected Projects</h2> */}
 
       <section className="projects" id="projects">
         <ProjectList projects={projects.featured} />

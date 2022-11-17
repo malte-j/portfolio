@@ -39,7 +39,7 @@ body {
 
   --monospace: "Space Mono", monospace;
   --sansSerif: "Inter", sans-serif;
-  --serif: "Perfectly Nineties", serif;
+  --serif: "Perfectly Nineties", "Garamond", serif;
 
   // if dark mode
   &[data-theme="light"] {
