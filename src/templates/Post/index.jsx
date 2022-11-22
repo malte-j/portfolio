@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Page from "../../components/Page";
 import "./post.scss";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import {motion} from 'framer-motion'
 
 export default function Template({ data }) {
   const { mdx } = data;
@@ -22,15 +23,16 @@ export default function Template({ data }) {
       <article className="blog-article">
         <header className={frontmatter.thumbnail ? "hasThumbnail" : ""}>
           {frontmatter.thumbnail ? (
+            <motion.div layoutId={frontmatter.path + "-thumbnail"}>
             <GatsbyImage
               className="thumbnail"
               image={image}
               alt={"preview image"}
-            />
+            /></motion.div>
           ) : undefined}
           <div className="title">
             <h2>{frontmatter.date}</h2>
-            <h1>{frontmatter.title}</h1>
+            <motion.h1 layoutId={frontmatter.path + "-title"}>{frontmatter.title}</motion.h1>
           </div>
         </header>
         <main>
