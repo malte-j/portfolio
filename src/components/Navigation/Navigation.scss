@@ -19,10 +19,14 @@ nav {
     justify-content: space-between;
     gap: 42px;
     flex-wrap: wrap;
-    transition: background-color 0.2s ease-in-out;
     padding: 12px 18px;
     border-radius: 1000px;
     font-family: var(--sansSerif);
+
+    @media (min-width: 640px) {
+      transition: background-color 0.2s ease-in-out;
+
+    }
 
     a {
       text-decoration: none;

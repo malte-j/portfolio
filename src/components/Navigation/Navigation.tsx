@@ -57,11 +57,20 @@ export default function Navigation() {
   }
 
   React.useEffect(() => {
-    const handleScroll = () => setHasScrolled(window.scrollY > 2);
+    const scrollingElement = document.querySelector(".blogPage") ?? window;
+
+    const handleScroll = () => {
+      if (scrollingElement instanceof Element) {
+        setHasScrolled(scrollingElement.scrollTop > 2);
+      } else {
+        setHasScrolled(scrollingElement.scrollY > 2);
+      }
+    };
+
+    scrollingElement.addEventListener("scroll", handleScroll);
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => scrollingElement.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

@@ -20,14 +20,36 @@
 
       .title {
         transform: translateY(-50%);
-        padding: 2.6rem 5rem 0 5rem;
+        padding: 2.6rem 5rem 2rem 5rem;
         background-color: #fffcfb93;
         backdrop-filter: blur(10px) saturate(180%);
         transition: transform 0.2s ease-in-out;
         will-change: transform;
         border-radius: 8px;
 
+        animation: fadeIn 0.5s ease-in-out;
+
         [data-theme="dark"] & {
+          background-color: #1212146a;
+          animation: fadeInDark 0.5s ease-in-out;
+
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          background-color: #fffcfb00;
+        }
+        to {
+          background-color: #fffcfb93;
+        }
+      }
+
+      @keyframes fadeInDark {
+        from {
+          background-color: #12121400;
+        }
+        to {
           background-color: #1212146a;
         }
       }

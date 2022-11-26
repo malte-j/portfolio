@@ -2,7 +2,7 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/Post/index.jsx`);
+  const blogPostTemplate = path.resolve(`src/templates/Post/index.tsx`);
   const result = await graphql(`
     {
       allMdx(filter: {fields: {source: {eq: "posts"}}, frontmatter: {path: {ne: null}}}, sort: {fields: frontmatter___date, order: DESC}) {

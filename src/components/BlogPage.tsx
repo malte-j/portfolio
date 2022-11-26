@@ -1,8 +1,9 @@
-import React from 'react';
-import Seo from './SEO';
-import Nav from './Navigation/Navigation';
-import Footer from './Footer/Footer';
-import { motion } from 'framer-motion';
+import React from "react";
+import Seo from "./SEO";
+import Nav from "./Navigation/Navigation";
+import Footer from "./Footer/Footer";
+import { motion } from "framer-motion";
+import { useScrollRestoration } from "gatsby";
 
 export default function Page({
   children,
@@ -13,23 +14,23 @@ export default function Page({
   className?: string;
   seo?: any;
 }) {
-  if (className) {
-    className = className + ' app';
-  } else {
-    className = 'app';
-  }
+  let fullClassName = className || "" + " app blogPage";
+
+  const ulScrollRestoration = useScrollRestoration(`blogroll`);
 
   return (
+    // @ts-ignore
     <motion.div
-      className={className}
+      className={fullClassName}
       layoutScroll
+      {...ulScrollRestoration}
       style={{
-        paddingTop: '3rem',
-        display: 'flex',
-        height: '100vh',
-        overflow: 'auto',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        paddingTop: "3rem",
+        display: "flex",
+        height: "100vh",
+        overflow: "auto",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
       <Seo {...seo} />
