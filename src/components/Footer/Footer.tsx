@@ -18,7 +18,7 @@ export default function Footer() {
       </a>
 
       <a
-        href="https://github.com/skyguardian42"
+        href="https://github.com/malte-j"
         rel="noreferrer"
         target="_blank"
       >
