@@ -70,6 +70,18 @@ nav {
   }
 }
 
+.nav__icon img {
+  display: none;
+}
+
+body[data-theme="dark"] .nav__icon img[data-theme="light"] {
+  display: initial;
+}
+
+body[data-theme="light"] .nav__icon img[data-theme="dark"] {
+  display: initial;
+}
+
 @supports (backdrop-filter: blur(10px)) {
   nav {
     &[data-has-scrolled="true"] .inner {

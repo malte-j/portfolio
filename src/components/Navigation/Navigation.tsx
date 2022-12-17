@@ -79,8 +79,15 @@ export default function Navigation() {
         </AnchorLink>
         <button onClick={toggleTheme} className="nav__icon">
           <img
-            src={currentTheme === "dark" ? "/sun.svg" : "/moon.svg"}
+            src="/sun.svg"
             alt="toggle theme"
+            title="Theme wechseln"
+            data-theme="light"
+          />
+          <img
+            src="./moon.svg"
+            alt="toggle theme"
+            data-theme="dark"
             title="Theme wechseln"
           />
         </button>
