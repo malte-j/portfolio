@@ -85,7 +85,7 @@ export default function Navigation() {
             data-theme="light"
           />
           <img
-            src="./moon.svg"
+            src="/moon.svg"
             alt="toggle theme"
             data-theme="dark"
             title="Theme wechseln"
