@@ -65,7 +65,7 @@ body {
     pointer-events: none;
     top: 0;
     width: 100%;
-    height: 60vh;
+    height: 80vh;
 
     background: radial-gradient(
         36.48% 48.7% at 50% 50.06%,
@@ -153,9 +153,13 @@ h2.contact {
 
   h1,
   a {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin: 0;
-    color: var(--colTextSecondary);
+    color: #641100;
+
+    body[data-theme="dark"] &  {
+      color: #ffd6be;
+    }
   }
 
   @media (max-width: 600px) {

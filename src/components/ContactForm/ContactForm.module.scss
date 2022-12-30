@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 1rem 44px;
   margin-bottom: 15vh;
+  font-family: var(--sansSerif);
 
   @media (max-width: 500px) {
     padding: 1rem;
@@ -87,6 +88,10 @@
     display: flex;
     justify-content: flex-end;
   }
+}
+
+.checkText {
+  font-family: var(--monospace);
 }
 
 .captchaWrapper {

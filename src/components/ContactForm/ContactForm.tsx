@@ -83,7 +83,7 @@ export default function ContactForm() {
           </div>
 
           <div className={s.captchaWrapper}>
-            <div>{checkText}</div>
+            <div className={s.checkText}>{checkText}</div>
             <div className={s.inputWrapper}>
               <input
                 type="text"

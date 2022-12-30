@@ -82,10 +82,12 @@ export const query = graphql`
         thumbnail {
           childImageSharp {
             gatsbyImageData(
-              width: 560
+              width: 600
+              height: 380
               quality: 90
               placeholder: BLURRED
               formats: [AUTO, WEBP]
+              transformOptions: { cropFocus: CENTER, fit: COVER }
             )
           }
         }

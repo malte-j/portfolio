@@ -2,6 +2,7 @@
 export const contact: string;
 export const inputWrapper: string;
 export const submitWrapper: string;
+export const checkText: string;
 export const captchaWrapper: string;
 export const submittedWrapper: string;
 export const showlength: string;
