@@ -53,7 +53,12 @@ export const pageQuery = graphql`
         thumbnail {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 1100, quality: 90)
+            gatsbyImageData(
+              width: 1100
+              quality: 90
+              formats: [WEBP, JPG]
+              webpOptions: { quality: 80 }
+            )
           }
         }
       }

@@ -2,7 +2,7 @@
   title: Image Upload and Download API with Dynamic Resizing, LQUIP, Dynamic Image Formats and Caching
   path: "/blog/express-image-upload"
   date: "2021-05-10"
-  thumbnail: "./thumbnail.jpg"
+  thumbnail: "./image-upload-download.png"
 
 ---
 

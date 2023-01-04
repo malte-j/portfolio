@@ -2,7 +2,7 @@
   title: Eine gute Idee, geklaut von Tailwind.
   path: "/blog/geklaut-von-tailwind"
   date: "2021-01-14"
-  thumbnail: "./thumbnail.jpg"
+  thumbnail: "./good-idea-tailwind.png"
 ---
 
 Der Hype um Tailwind CSS ist gerade groß, laut State of CSS[^1] war es 2020 sogar das CSS-Framework mit dem größten Entwicklerinteresse:

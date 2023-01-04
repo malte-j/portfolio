@@ -89,7 +89,13 @@ export const pageQuery = graphql`
             date(formatString: "DD.MM.YYYY", locale: "de")
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width: 600, quality: 90)
+                gatsbyImageData(
+                  width: 600
+                  quality: 80
+                  avifOptions: { quality: 70 }
+                  formats: [AVIF, WEBP, JPG]
+                  webpOptions: { quality: 80 }
+                )
               }
             }
             externalLink

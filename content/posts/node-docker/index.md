@@ -2,7 +2,7 @@
   title: Tiny and Secure Docker images for NodeJS Applications
   path: "/blog/node-docker-images"
   date: "2022-11-15"
-  thumbnail: "./thumbnail.png"
+  thumbnail: "./tiny-docker.png"
 
 ---
 
