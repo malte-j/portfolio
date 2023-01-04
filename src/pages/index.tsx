@@ -8,6 +8,8 @@ import Fake3DImage from "../components/Fake3DImage/Fake3DImage";
 import SEO from "../components/SEO";
 import { Helmet } from "react-helmet";
 import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
+import { BlogRollPreview } from "../components/BlogRollPreview/BlogRollPreview";
+import * as s from "./index.module.scss";
 
 export default function Index({ data }) {
   const projects = {
@@ -55,9 +57,15 @@ export default function Index({ data }) {
         <ProjectList projects={projects.other} />
       </section>
 
-      <h2 className="contact">Contact</h2>
+      <section className={s.blogPreview}>
+        <h1 className={s.headline}>Blog</h1>
+        <BlogRollPreview />
+      </section>
 
-      <Contact />
+      <section>
+        <h1 className={s.headline}>Contact</h1>
+        <Contact />
+      </section>
 
       <Footer />
     </div>

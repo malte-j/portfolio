@@ -128,11 +128,6 @@ h3 {
   margin: 0;
 }
 
-h2.contact {
-  margin-top: 18vh;
-  margin-bottom: 10vh;
-}
-
 .header {
   padding: 3rem 5vw;
   text-align: center;
@@ -146,7 +141,6 @@ h2.contact {
   margin: 0 auto;
   gap: 14px;
 
-
   .info {
     font-family: var(--serif);
   }
@@ -157,7 +151,7 @@ h2.contact {
     margin: 0;
     color: #641100;
 
-    body[data-theme="dark"] &  {
+    body[data-theme="dark"] & {
       color: #ffd6be;
     }
   }
