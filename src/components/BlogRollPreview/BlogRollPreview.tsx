@@ -22,6 +22,7 @@ export const BlogRollPreview = () => {
               title
               date(formatString: "MMMM YYYY", locale: "en")
               path
+              externalLink
               thumbnail {
                 childImageSharp {
                   gatsbyImageData(
@@ -54,7 +55,9 @@ export const BlogRollPreview = () => {
         {posts.map((post, i) =>
           i % 2 == 1 ? <Post post={post.node} key={post.node.id} /> : null
         )}
-				<Link className={s.readMoreButton} to="/blog">View All Posts</Link>
+        <Link className={s.readMoreButton} to="/blog">
+          View All Posts
+        </Link>
       </div>
     </div>
   );
@@ -62,8 +65,7 @@ export const BlogRollPreview = () => {
 
 function Post({ post }: { post: any }) {
   return post.frontmatter.thumbnail ? (
-    <div className={s.postWithImage}>
-   
+    <PostWrapper post={post} className={s.postWithImage}>
       <GatsbyImage
         className={s.thumbnail}
         image={getImage(post.frontmatter.thumbnail)!}
@@ -71,11 +73,31 @@ function Post({ post }: { post: any }) {
       />
       <p className={s.date}>{post.frontmatter.date}</p>
       <h3 className={s.title}>{post.frontmatter.title}</h3>
-    </div>
+    </PostWrapper>
   ) : (
-    <div className={s.postWithoutImage}>
+    <PostWrapper post={post} className={s.postWithoutImage}>
       <p className={s.date}>{post.frontmatter.date}</p>
       <h3 className={s.title}>{post.frontmatter.title}</h3>
-    </div>
+    </PostWrapper>
+  );
+}
+
+function PostWrapper({
+  post,
+  className,
+  children,
+}: {
+  post: any;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return post.frontmatter.externalLink ? (
+    <a href={post.frontmatter.externalLink} className={className}>
+      {children}
+    </a>
+  ) : (
+    <Link to={post.frontmatter.path} className={className}>
+      {children}
+    </Link>
   );
 }

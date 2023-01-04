@@ -2,6 +2,7 @@
   display: flex;
   gap: 90px;
   justify-content: center;
+  padding: 0 15px;
 
   .left,
   .right {
@@ -9,6 +10,22 @@
     flex-direction: column;
     gap: 110px;
     max-width: 500px;
+    flex: 1;
+  }
+
+  @media (max-width: 1200px) {
+    gap: 60px;
+  }
+
+  @media (max-width: 690px) {
+    flex-direction: column;
+    align-items: center;
+
+    .left,
+    .right {
+      max-width: 100%;
+      gap: 100px;
+    }
   }
 }
 
@@ -33,8 +50,12 @@
   flex-direction: column;
   gap: 15px;
   padding: 40px;
-  background: linear-gradient(145.36deg, #fff2ee 20.43%, #ffffff 82.09%);
+  background: linear-gradient(355.86deg, #FFF5F2 23.01%, #FFFFFF 96.5%);
   border-radius: 12px;
+
+  &:hover .title {
+    color: #762900;
+  }
 
   .title {
     color: #2f0a00;
