@@ -2,6 +2,7 @@
   title: Generating Dynamic OG Images without Next.js
   path: "/blog/thumbnail-gen"
   date: "2022-12-17"
+  unreleased: true
 ---
 
 Website link previews have become more and more popular in recent years.
