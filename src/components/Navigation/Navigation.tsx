@@ -13,9 +13,14 @@ export default function Navigation() {
       : null
   );
 
-  const [currentTheme, setCurrentTheme] = React.useState(
-    document.body.dataset.theme as "dark" | "light"
-  );
+  const [currentTheme, setCurrentTheme] = React.useState<
+    "light" | "dark" | null
+  >(null);
+
+  useEffect(() => {
+    const theme = document.body.dataset.theme as "dark" | "light";
+    setCurrentTheme(theme);
+  });
 
   function handleDarkmodeMediaQueryChange(event) {
     const updatedTheme = event.matches ? "dark" : "light";
