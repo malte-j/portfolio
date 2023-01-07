@@ -13,20 +13,9 @@ export default function Navigation() {
       : null
   );
 
-  /**
-   * @type ["light" | "dark"]
-   */
-  const [currentTheme, setCurrentTheme] = React.useState(() => {
-    if (typeof localStorage == "undefined" || typeof document == "undefined")
-      return "light";
-
-    const theme =
-      localStorage.getItem("theme") ??
-      (darkmodeMediaQuery.current?.matches ? "dark" : "light");
-
-    document.body.dataset.theme = theme;
-    return theme;
-  });
+  const [currentTheme, setCurrentTheme] = React.useState(
+    document.body.dataset.theme as "dark" | "light"
+  );
 
   function handleDarkmodeMediaQueryChange(event) {
     const updatedTheme = event.matches ? "dark" : "light";
