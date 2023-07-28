@@ -79,6 +79,10 @@
       &.wider {
         max-width: 60rem;
       }
+      
+      &.widest {
+        max-width: 76rem;
+      }
     }
 
     > code {
@@ -252,5 +256,19 @@
     border-radius: 5px;
     // border: 1px solid black;
     overflow: hidden;
+  }
+
+  details {
+    font-size: 1.2rem;
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }

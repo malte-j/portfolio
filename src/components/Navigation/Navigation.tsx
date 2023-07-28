@@ -20,7 +20,20 @@ export default function Navigation() {
   useEffect(() => {
     const theme = document.body.dataset.theme as "dark" | "light";
     setCurrentTheme(theme);
-  });
+  }, []);
+
+  useEffect(() => {
+    const themeChangeListener = (event: StorageEvent) => {
+      if (event.key === "theme") {
+        const newTheme = (event.newValue as "dark" | "light" | null) ?? "light";
+
+        setCurrentTheme(newTheme);
+        document.body.dataset.theme = newTheme;
+      }
+    };
+    window.addEventListener("storage", themeChangeListener);
+    return () => window.removeEventListener("storage", themeChangeListener);
+  }, []);
 
   function handleDarkmodeMediaQueryChange(event) {
     const updatedTheme = event.matches ? "dark" : "light";

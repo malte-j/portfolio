@@ -47,7 +47,8 @@ module.exports = {
       options: {
         name: `Malte`,
         short_name: `Malte`,
-        description: "Website & Portfolio of Malte Janßen, Web Developer and Student.",
+        description:
+          "Website & Portfolio of Malte Janßen, Web Developer and Student.",
         orientation: `portrait`,
         start_url: `/`,
         background_color: `#000000`,
@@ -62,7 +63,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         commonmark: true,
-        
+
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
           {
@@ -77,6 +78,12 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               noInlineHighlight: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
         ],
