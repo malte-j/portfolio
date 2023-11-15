@@ -55,11 +55,28 @@ The easiest way I found to spin up a cluster is using [K3s](https://k3s.io/). It
 
 # Setup
 
+To get started, you should have the following installed on your local machine:
+- kubectl ([link](https://kubernetes.io/docs/tasks/tools/))
+- helm ([link](https://helm.sh/docs/intro/install/))
+- k9s (recommended, not required. [link](https://k9scli.io/topics/install/))
+- Python 3.10^
+  - dependencies: `pip install metaflow kubernetes notebook`
+
 First, you need a VM with SSH access. For this you can either use your on-premise infrastructure, or, like I did for testing this, a VPS service like Hetzner (if you want, you can use my [referral link](https://github.com/vitobotta/hetzner-k3s) to get 20€ free credit). If you use a VPS service, remember to set up a firewall to only allow SSH access and kubernetes control plane access from your IP address (port 22 and 6443).
 
 <!-- @TODO, insert correct script link -->
 
-Then, you need to install K3s, Argo Workflows and MinIO. For installing everything at once, I created a script in the accompanying [GitHub repository](https://github.com/malte-j/metaflow-on-k3s) which will hopefully handle everything for you. Just download the repo on the VPS. **Before** running the script, replace the MINIO_ROOT_USER and MINIO_ROOT_PASSWORD in `minio.yaml` with your own base-64 encoded credentials. 
+Then, you need to install K3s, Argo Workflows and MinIO. For installing everything at once, I created a script in the accompanying [GitHub repository](https://github.com/malte-j/metaflow-on-k3s) which will hopefully handle everything for you. Just download the repo on the VPS. Before running the script, set environment variables for the root Minio user.
+
+```bash
+export MINIO_ROOT_USER=miniouser MINIO_ROOT_PASSWORD=miniopassword
+```
+
+```bash
+git clone https://github.com/malte-j/metaflow-on-k3s \
+cd metaflow-on-k3s \
+chmod +x setup.sh && ./setup.sh
+```
 
 The Argo Workflows install is based on the [quickstart guide](https://github.com/argoproj/argo-workflows/blob/master/docs/quick-start.md) and **disables authentication** for access to it. The MinIO install is loosely based on the [metaflow-with-airflow-minio](https://github.com/outerbounds/metaflow-with-airflow-minio/tree/master) repository, which proved to be helpful in figuring all of this out.
 
@@ -68,13 +85,52 @@ You should now see the services and pods running in the cluster.
 ![kubectl get pods](./setup-working.png)
 
 
-For the final step of the setup you will need access to the cluster from you local workstation. Look at the [K3s guide](https://docs.k3s.io/cluster-access#accessing-the-cluster-from-outside-with-kubectl) for details on how to do this.
+For the final step of the setup you will need access to the cluster from you **local workstation**. Look at the [K3s guide](https://docs.k3s.io/cluster-access#accessing-the-cluster-from-outside-with-kubectl) for details on how to do this.
 
-To create bucket for metaflow, establish a tunnel on your workstation to Minio using `kubectl port-forward svc/minio-service 9000:9000 -n minio`. Next will need to setup metaflow on the workstation, so I recommend installing it in a virtual environment. I copied a python script for creating buckets from the metaflow-with-airflow-minio repository. Run it using `python3 create_bucket.py --access-key miniouser --secret-key miniopassword --bucket-name metaflow-test`. Again, replace the secret and access key with your own.
+To create bucket where Metaflow can store run data, establish a tunnel on your workstation to Minio.
+
+```bash
+kubectl port-forward svc/minio-service 9000:9000 -n minio
+```
+
+I copied a python script for creating the bucket from the aforementioned metaflow-with-airflow-minio repository. Run it to create the bucket. You might need to export the minio credential environment variables again on your local machine.
+
+```bash
+# Run on your local machine
+export MINIO_ROOT_USER=miniouser MINIO_ROOT_PASSWORD=miniopassword
+```
+
+```bash
+# local machine
+git clone https://github.com/malte-j/metaflow-on-k3s \
+cd metaflow-on-k3s \
+python3 create_bucket.py --access-key $MINIO_ROOT_USER --secret-key $MINIO_ROOT_PASSWORD --bucket-name metaflow-test
+```
+
 
 # Metaflow
 
-Now you can actually start with installing Metaflow. By now you should have a local setup and can access you cluster from your workstation. To install Metaflow, I used the [Helm Chart](https://github.com/outerbounds/metaflow-tools/tree/master/k8s/helm/metaflow) provided by Outerbounds. [Install Helm](https://helm.sh/docs/intro/install/) on your workstation for this. Metaflow will need to access Minio, so change credentials in `install-metaflow.sh` before running it on your workstation.
+Now you can actually start with installing Metaflow. By now you should have a local setup and can access you cluster from your workstation. To install Metaflow, I used the [Helm Chart](https://github.com/outerbounds/metaflow-tools/tree/master/k8s/helm/metaflow) provided by Outerbounds. [Install Helm](https://helm.sh/docs/intro/install/) on your workstation for this. For this I created a second set-up script that runs on your local machine.
+
+```bash
+# local machine
+chmod +x ./install-metaflow.sh && ./install-metaflow.sh
+```
+
+The Metaflow Service and UI should be running now. You can check by establishing tunnels to the UI. They are exposed under a Kubernetes Ingress. Create an SSH tunnel for this.
+
+```bash
+# local machine
+ssh -L 8083:<your-server-ip>:80 root@<your-server-ip>
+```
+
+Now you should be able to access the empty UI at [http://localhost:8083](http://localhost:8083). To register and run a workflow in the cluster, you need to configure you local Metaflow install.
+
+```bash
+# local machine
+metaflow configure kubernetes
+```
+
 
 
 # F.A.Q.

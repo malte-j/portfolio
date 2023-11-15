@@ -79,7 +79,7 @@
       &.wider {
         max-width: 60rem;
       }
-      
+
       &.widest {
         max-width: 76rem;
       }
@@ -136,7 +136,11 @@
     word-break: break-word;
   }
 
-  li {
+  ul ul {
+    margin-bottom: 0;
+  }
+
+  li:not(:last-child) {
     margin-bottom: 0.8rem;
   }
 
