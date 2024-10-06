@@ -3,6 +3,7 @@
   path: "/blog/rive-scroll-animations"
   date: "2024-10-07"
   unreleased: false
+  metaImage: "./meta_img.png"
 ---
 
 import Aside from './components/Aside';
@@ -204,7 +205,6 @@ const RiveScroll = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    console.log("rive", riveWASMResource);
     RuntimeLoader.setWasmUrl(riveWASMResource);
     let stateMachineLoadInput: StateMachineInput;
 

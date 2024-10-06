@@ -10,7 +10,6 @@ const RiveScroll = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    console.log("rive", riveWASMResource);
     RuntimeLoader.setWasmUrl(riveWASMResource);
     let stateMachineLoadInput: StateMachineInput;
 

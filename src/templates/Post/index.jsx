@@ -9,6 +9,7 @@ export default function Template({ data }) {
   const { mdx } = data;
   const { frontmatter, body, excerpt } = mdx;
   const thumbnailUrl = frontmatter?.thumbnail?.publicURL;
+  const metaUrl = frontmatter?.metaImage?.publicURL;
   const image = getImage(frontmatter.thumbnail);
 
   return (
@@ -16,7 +17,7 @@ export default function Template({ data }) {
       seo={{
         title: frontmatter.title,
         description: excerpt,
-        image: thumbnailUrl,
+        image: metaUrl ?? thumbnailUrl,
       }}
     >
       <article className="blog-article">
@@ -50,6 +51,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM YYYY", locale: "en")
         path
+        metaImage {
+          publicURL
+        }
         thumbnail {
           publicURL
           childImageSharp {
