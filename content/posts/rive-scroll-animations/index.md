@@ -282,10 +282,20 @@ That's it! You should now have a working scroll-linked animation using Rive. Tha
     box-shadow: none!important;
   }
 
+
+  code:not(.language-html) {
+    color: #121212;
+    background-color: #fff;
+    padding-inline: 0.2rem;
+    border-radius: 2px;
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+  
   .xwide {
     max-width: 1200px!important
-
   }
+
   `}
 </style>
 
