@@ -1,0 +1,32 @@
+.aside {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1.6rem;
+  }
+
+  > * {
+    flex: 1 1 0;
+  }
+
+  &[data-spread="3/2"] {
+    > *:first-child {
+      flex: 3 1 0;
+    }
+
+    > *:last-child {
+      flex: 2 1 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: 0 !important;
+  }
+}

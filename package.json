@@ -17,6 +17,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@radix-ui/react-icons": "^1.1.1",
+    "@rive-app/canvas-lite": "^2.21.5",
     "@types/react": "^18.0.15",
     "gatsby": "^4.19.2",
     "gatsby-plugin-anchor-links": "^1.2.1",
