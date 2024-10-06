@@ -283,7 +283,7 @@ That's it! You should now have a working scroll-linked animation using Rive. Tha
   }
 
 
-  code:not(.language-html) {
+  p > code {
     color: #121212;
     background-color: #fff;
     padding-inline: 0.2rem;
